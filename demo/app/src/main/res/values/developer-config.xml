@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <string name="base_url" translatable="false">https://maps.track-asia.com/</string>-->
+    <string name="mapbox_access_token" translatable="false">YOUR_MAPBOX_PUBLIC_TOKEN</string>
+<!--    <string name="map_style_light" translatable="false">https://maps.track-asia.com/styles/v1/streets.json?key=public</string>-->
+</resources>
