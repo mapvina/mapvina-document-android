@@ -1,4 +1,4 @@
-# TrackAsia Demo Android Project - Cursor Rules
+# MapVina Demo Android Project - Cursor Rules
 
 This document explains the Cursor rules set up for this project to enhance the development experience.
 
@@ -43,7 +43,7 @@ Custom snippets are available for frequently used patterns:
 - **log**: Insert a Log.d() statement
 - **activity**: Create a new Activity class
 - **fragment**: Create a new Fragment class
-- **trackmap**: Set up a basic TrackAsiaSample implementation
+- **trackmap**: Set up a basic MapVinaSample implementation
 
 ## Using Snippets
 

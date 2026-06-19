@@ -26,7 +26,7 @@ The `.cursorrules` file contains IDE configuration for the Cursor editor, specif
   - Key dependencies:
     - Network: Retrofit 2.9.0, OkHttp 4.9.3
     - Google Maps: play-services-maps 18.0.2
-    - TrackAsia SDK components: android-sdk 2.0.2, navigation-ui-android 2.0.2
+    - MapVina SDK components: android-sdk 2.0.2, navigation-ui-android 2.0.2
 
 ### 2.2 AndroidManifest.xml
 
@@ -48,11 +48,11 @@ The `.cursorrules` file contains IDE configuration for the Cursor editor, specif
 ### 3.1 API Endpoints (Constants.kt)
 
 - **Base URLs** for different regions:
-  - Vietnam: https://maps.track-asia.com/
-  - Singapore: https://sg-maps.track-asia.com/
-  - Thailand: https://th-maps.track-asia.com/
-  - Taiwan: https://tw-maps.track-asia.com/
-  - Malaysia: https://my-maps.track-asia.com/
+  - Vietnam: https://maps.map-vina.com/
+  - Singapore: https://sg-maps.map-vina.com/
+  - Thailand: https://th-maps.map-vina.com/
+  - Taiwan: https://tw-maps.map-vina.com/
+  - Malaysia: https://my-maps.map-vina.com/
 
 - **Map Styles**:
   - Streets style
@@ -115,7 +115,7 @@ The `.cursorrules` file contains IDE configuration for the Cursor editor, specif
 | Gson | Swift Codable or SwiftyJSON |
 | RxJava | RxSwift + RxCocoa |
 | Google Maps | Google Maps iOS SDK or MapKit |
-| TrackAsia SDK | MapBox iOS SDK or customize MapKit |
+| MapVina SDK | MapBox iOS SDK or customize MapKit |
 | Timber | CocoaLumberjack or os_log |
 
 ### 4.4 Configuration File Mapping
@@ -170,15 +170,15 @@ class NetworkManager {
 ```swift
 struct APIConstants {
     // Base URLs
-    static let baseUrlVN = "https://maps.track-asia.com/"
-    static let baseUrlSG = "https://sg-maps.track-asia.com/"
-    static let baseUrlTH = "https://th-maps.track-asia.com/"
-    static let baseUrlTW = "https://tw-maps.track-asia.com/"
-    static let baseUrlMI = "https://my-maps.track-asia.com/"
+    static let baseUrlVN = "https://maps.map-vina.com/"
+    static let baseUrlSG = "https://sg-maps.map-vina.com/"
+    static let baseUrlTH = "https://th-maps.map-vina.com/"
+    static let baseUrlTW = "https://tw-maps.map-vina.com/"
+    static let baseUrlMI = "https://my-maps.map-vina.com/"
     
     // Style URLs
-    static let styleUrlVN = "https://maps.track-asia.com/styles/v2/streets.json?key=public"
-    static let styleUrlSG = "https://sg-maps.track-asia.com/styles/v2/streets.json?key=public"
+    static let styleUrlVN = "https://maps.map-vina.com/styles/v2/streets.json?key=public"
+    static let styleUrlSG = "https://sg-maps.map-vina.com/styles/v2/streets.json?key=public"
     // Add other style URLs similarly
     
     // API Endpoints
@@ -259,7 +259,7 @@ struct AutoSuggestionResponse: Codable {
     <key>API_KEY</key>
     <string>AIzaSyBwkQUArVSc1fh-xweGuiLjJQaf4TA-PTM</string>
     <key>BUNDLE_ID</key>
-    <string>com.trackasia.sample</string>
+    <string>com.mapvina.sample</string>
     <key>CLIENT_ID</key>
     <string>817120621812-2dl74jg778bnhfh7v17dt4rvj1jf6ui0.apps.googleusercontent.com</string>
     <key>GCM_SENDER_ID</key>
@@ -300,7 +300,7 @@ struct AutoSuggestionResponse: Codable {
     <key>GMSAPIKey</key>
     <string>AIzaSyA0T9_RVH4Jva3pKhenF5G059Pa7G0KxWE</string>
     
-    <!-- TrackAsia Configuration -->
+    <!-- MapVina Configuration -->
     <key>MGLMapboxAccessToken</key>
     <string>YOUR_MAPBOX_PUBLIC_TOKEN</string>
 </dict>
@@ -312,7 +312,7 @@ struct AutoSuggestionResponse: Codable {
 ```ruby
 platform :ios, '13.0'
 
-target 'TrackAsiaSample' do
+target 'MapVinaSample' do
   use_frameworks!
 
   # Networking
@@ -342,7 +342,7 @@ end
 
 1. **Setup Xcode Project**:
    - Create a new iOS project with Swift
-   - Configure bundle identifier to match Android's "com.trackasia.sample"
+   - Configure bundle identifier to match Android's "com.mapvina.sample"
    - Set minimum iOS version (equivalent to Android's API 26, roughly iOS 13)
 
 2. **Dependency Management**:
@@ -372,14 +372,14 @@ end
 
 ## 7. Conclusion
 
-The Android application is a mapping demo that uses the TrackAsia SDK with multiple features:
+The Android application is a mapping demo that uses the MapVina SDK with multiple features:
 - Map visualization with different styles
 - Location-based services (geocoding, reverse geocoding)
 - Routing and navigation
 - Points of interest and waypoints
 - Map feature visualization and clustering
 
-For iOS implementation, the best approach is to use MapBox iOS SDK with custom styling to match TrackAsia's functionality, while maintaining the same API endpoints and configuration parameters.
+For iOS implementation, the best approach is to use MapBox iOS SDK with custom styling to match MapVina's functionality, while maintaining the same API endpoints and configuration parameters.
 
 ## 8. Screen-by-Screen Implementation Guide
 
@@ -429,7 +429,7 @@ Displays multiple markers and calculates routes between them.
 #### iOS Implementation
 1. Create a view controller with map view
 2. Add tap gesture to add multiple points
-3. Implement route calculation using the TrackAsia routing API
+3. Implement route calculation using the MapVina routing API
 4. Draw polylines between points
 
 ### 8.4 Cluster Map (MapClusterFragment → ClusterMapViewController)
@@ -540,7 +540,7 @@ Dự án Android có cấu trúc thư mục sau:
 app/
 ├── src/
 │   ├── main/
-│   │   ├── java/com/trackasia/sample/
+│   │   ├── java/com/mapvina/sample/
 │   │   │   ├── adapter/
 │   │   │   ├── api/
 │   │   │   │   ├── Constants.kt
@@ -621,7 +621,7 @@ class MainViewController: UIViewController {
         logoImageView.tintColor = .white
         
         let appNameLabel = UILabel()
-        appNameLabel.text = "TrackAsia"
+        appNameLabel.text = "MapVina"
         appNameLabel.textColor = .white
         appNameLabel.font = UIFont.boldSystemFont(ofSize: 16)
         
@@ -2128,7 +2128,7 @@ Dự án Android có cấu trúc thư mục sau:
 app/
 ├── src/
 │   ├── main/
-│   │   ├── java/com/trackasia/sample/
+│   │   ├── java/com/mapvina/sample/
 │   │   │   ├── adapter/
 │   │   │   ├── api/
 │   │   │   │   ├── Constants.kt
@@ -2209,7 +2209,7 @@ class MainViewController: UIViewController {
         logoImageView.tintColor = .white
         
         let appNameLabel = UILabel()
-        appNameLabel.text = "TrackAsia"
+        appNameLabel.text = "MapVina"
         appNameLabel.textColor = .white
         appNameLabel.font = UIFont.boldSystemFont(ofSize: 16)
         
@@ -3289,7 +3289,7 @@ Dự án Android có cấu trúc thư mục sau:
 app/
 ├── src/
 │   ├── main/
-│   │   ├── java/com/trackasia/sample/
+│   │   ├── java/com/mapvina/sample/
 │   │   │   ├── adapter/
 │   │   │   ├── api/
 │   │   │   │   ├── Constants.kt
@@ -3370,7 +3370,7 @@ class MainViewController: UIViewController {
         logoImageView.tintColor = .white
         
         let appNameLabel = UILabel()
-        appNameLabel.text = "TrackAsia"
+        appNameLabel.text = "MapVina"
         appNameLabel.textColor = .white
         appNameLabel.font = UIFont.boldSystemFont(ofSize: 16)
         

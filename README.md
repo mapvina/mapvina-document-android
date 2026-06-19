@@ -1,4 +1,4 @@
-# 📍 TrackAsia Maps Android SDK V2- Hướng dẫn Tích hợp Chi tiết
+# 📍 MapVina Maps Android SDK V2- Hướng dẫn Tích hợp Chi tiết
 
 ## 📋 Mục lục
 1. [Giới thiệu](#giới-thiệu)
@@ -16,7 +16,7 @@
 
 ## 🌟 Giới thiệu
 
-TrackAsia Maps SDK là một giải pháp bản đồ mạnh mẽ được thiết kế đặc biệt cho thị trường Đông Nam Á, hỗ trợ nhiều quốc gia bao gồm Việt Nam, Singapore, Thái Lan, Malaysia và Taiwan. SDK cung cấp đầy đủ các tính năng từ hiển thị bản đồ cơ bản đến điều hướng phức tạp.
+MapVina Maps SDK là một giải pháp bản đồ mạnh mẽ được thiết kế đặc biệt cho thị trường Đông Nam Á, hỗ trợ nhiều quốc gia bao gồm Việt Nam, Singapore, Thái Lan, Malaysia và Taiwan. SDK cung cấp đầy đủ các tính năng từ hiển thị bản đồ cơ bản đến điều hướng phức tạp.
 
 ### Điểm nổi bật:
 - ✅ Hỗ trợ đa quốc gia với dữ liệu địa phương chi tiết
@@ -116,7 +116,7 @@ android {
     compileSdk 35
     
     defaultConfig {
-        applicationId "com.trackasia.sample"
+        applicationId "com.mapvina.sample"
         minSdk 26
         targetSdk 35
         versionCode 1
@@ -144,19 +144,19 @@ android {
 }
 
 dependencies {
-    // TrackAsia Core SDK
-    implementation('io.github.track-asia:android-sdk:2.0.2')
+    // MapVina Core SDK
+    implementation('io.github.map-vina:android-sdk:2.0.2')
     
-    // TrackAsia Data Models
-    implementation('io.github.track-asia:android-sdk-geojson:2.0.1')
-    implementation('io.github.track-asia:android-sdk-turf:2.0.1')
+    // MapVina Data Models
+    implementation('io.github.map-vina:android-sdk-geojson:2.0.1')
+    implementation('io.github.map-vina:android-sdk-turf:2.0.1')
     
-    // TrackAsia Plugins
-    implementation('io.github.track-asia:android-plugin-annotation-v9:2.0.1')
+    // MapVina Plugins
+    implementation('io.github.map-vina:android-plugin-annotation-v9:2.0.1')
     
-    // TrackAsia Navigation
-    implementation('io.github.track-asia:libandroid-navigation:2.0.2')
-    implementation('io.github.track-asia:libandroid-navigation-ui:2.0.2')
+    // MapVina Navigation
+    implementation('io.github.map-vina:libandroid-navigation:2.0.2')
+    implementation('io.github.map-vina:libandroid-navigation-ui:2.0.2')
     
     // Location Services
     implementation 'com.google.android.gms:play-services-location:21.0.1'
@@ -205,9 +205,9 @@ org.gradle.caching=true
             </intent-filter>
         </activity>
         
-        <!-- TrackAsia Navigation Service -->
+        <!-- MapVina Navigation Service -->
         <service 
-            android:name="com.trackasia.navigation.android.navigation.v5.navigation.MapboxNavigationService"
+            android:name="com.mapvina.navigation.android.navigation.v5.navigation.MapboxNavigationService"
             android:exported="false" />
             
     </application>
@@ -218,13 +218,13 @@ org.gradle.caching=true
 
 ## 🚀 Tích hợp chi tiết
 
-### 1. Khởi tạo TrackAsia
+### 1. Khởi tạo MapVina
 ```kotlin
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        // Khởi tạo TrackAsia với context
-        TrackAsia.getInstance(this)
+        // Khởi tạo MapVina với context
+        MapVina.getInstance(this)
     }
 }
 ```
@@ -239,38 +239,38 @@ class MyApplication : Application() {
     android:layout_height="match_parent">
     
     <!-- MapView với đầy đủ cấu hình -->
-    <com.trackasia.android.maps.MapView
+    <com.mapvina.android.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:trackasia_cameraTargetLat="10.728073"
-        app:trackasia_cameraTargetLng="106.624054"
-        app:trackasia_cameraZoom="12"
-        app:trackasia_cameraZoomMax="20"
-        app:trackasia_cameraZoomMin="4"
-        app:trackasia_cameraBearing="0"
-        app:trackasia_cameraTilt="0"
-        app:trackasia_enableTilePrefetch="true"
-        app:trackasia_enableZMediaOverlay="true"
-        app:trackasia_renderTextureMode="true"
-        app:trackasia_renderTextureTranslucentSurface="true"
-        app:trackasia_uiAttribution="true"
-        app:trackasia_uiAttributionGravity="bottom|start"
-        app:trackasia_uiAttributionMarginLeft="4dp"
-        app:trackasia_uiAttributionMarginBottom="4dp"
-        app:trackasia_uiCompass="true"
-        app:trackasia_uiCompassGravity="top|end"
-        app:trackasia_uiCompassMarginTop="4dp"
-        app:trackasia_uiCompassMarginRight="4dp"
-        app:trackasia_uiDoubleTapGestures="true"
-        app:trackasia_uiLogo="true"
-        app:trackasia_uiLogoGravity="bottom|start"
-        app:trackasia_uiLogoMarginLeft="4dp"
-        app:trackasia_uiLogoMarginBottom="4dp"
-        app:trackasia_uiRotateGestures="true"
-        app:trackasia_uiScrollGestures="true"
-        app:trackasia_uiTiltGestures="true"
-        app:trackasia_uiZoomGestures="true" />
+        app:mapvina_cameraTargetLat="10.728073"
+        app:mapvina_cameraTargetLng="106.624054"
+        app:mapvina_cameraZoom="12"
+        app:mapvina_cameraZoomMax="20"
+        app:mapvina_cameraZoomMin="4"
+        app:mapvina_cameraBearing="0"
+        app:mapvina_cameraTilt="0"
+        app:mapvina_enableTilePrefetch="true"
+        app:mapvina_enableZMediaOverlay="true"
+        app:mapvina_renderTextureMode="true"
+        app:mapvina_renderTextureTranslucentSurface="true"
+        app:mapvina_uiAttribution="true"
+        app:mapvina_uiAttributionGravity="bottom|start"
+        app:mapvina_uiAttributionMarginLeft="4dp"
+        app:mapvina_uiAttributionMarginBottom="4dp"
+        app:mapvina_uiCompass="true"
+        app:mapvina_uiCompassGravity="top|end"
+        app:mapvina_uiCompassMarginTop="4dp"
+        app:mapvina_uiCompassMarginRight="4dp"
+        app:mapvina_uiDoubleTapGestures="true"
+        app:mapvina_uiLogo="true"
+        app:mapvina_uiLogoGravity="bottom|start"
+        app:mapvina_uiLogoMarginLeft="4dp"
+        app:mapvina_uiLogoMarginBottom="4dp"
+        app:mapvina_uiRotateGestures="true"
+        app:mapvina_uiScrollGestures="true"
+        app:mapvina_uiTiltGestures="true"
+        app:mapvina_uiZoomGestures="true" />
         
     <!-- Floating Action Buttons -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -290,12 +290,12 @@ class MyApplication : Application() {
 class MapActivity : AppCompatActivity(), PermissionsListener {
     
     private lateinit var mapView: MapView
-    private lateinit var trackasiaMap: TrackAsiaMap
+    private lateinit var mapvinaMap: MapVinaMap
     private lateinit var permissionsManager: PermissionsManager
     private lateinit var navigationMapRoute: NavigationMapRoute
     
     // Configuration
-    private val styleUrl = "https://maps.track-asia.com/styles/v1/streets.json?key=public_key"
+    private val styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public_key"
     private val defaultLocation = LatLng(10.728073, 106.624054) // Ho Chi Minh City
     private val defaultZoom = 12.0
     
@@ -303,8 +303,8 @@ class MapActivity : AppCompatActivity(), PermissionsListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
         
-        // Initialize TrackAsia
-        TrackAsia.getInstance(this)
+        // Initialize MapVina
+        MapVina.getInstance(this)
         
         // Get MapView
         mapView = findViewById(R.id.mapView)
@@ -312,7 +312,7 @@ class MapActivity : AppCompatActivity(), PermissionsListener {
         
         // Initialize map
         mapView.getMapAsync { map ->
-            trackasiaMap = map
+            mapvinaMap = map
             
             // Set style
             map.setStyle(Style.Builder().fromUri(styleUrl)) { style ->
@@ -342,7 +342,7 @@ class MapActivity : AppCompatActivity(), PermissionsListener {
         // Check permissions
         if (PermissionsManager.areLocationPermissionsGranted(this)) {
             // Enable location component
-            val locationComponent = trackasiaMap.locationComponent
+            val locationComponent = mapvinaMap.locationComponent
             
             locationComponent.activateLocationComponent(
                 LocationComponentActivationOptions.builder(this, style)
@@ -360,7 +360,7 @@ class MapActivity : AppCompatActivity(), PermissionsListener {
     }
     
     private fun addMarker(latLng: LatLng) {
-        trackasiaMap.addMarker(
+        mapvinaMap.addMarker(
             MarkerOptions()
                 .position(latLng)
                 .title("Selected Location")
@@ -571,15 +571,15 @@ class CustomMapStyles {
     
     companion object {
         // Style URLs for different countries
-        const val STYLE_VN_STREETS = "https://maps.track-asia.com/styles/v1/streets.json?key=public_key"
-        const val STYLE_VN_SATELLITE = "https://maps.track-asia.com/styles/v1/satellite.json?key=public_key"
-        const val STYLE_VN_NIGHT = "https://maps.track-asia.com/styles/v1/night.json?key=public_key"
-        const val STYLE_SG_STREETS = "https://sg-maps.track-asia.com/styles/v1/streets.json?key=public_key"
-        const val STYLE_TH_STREETS = "https://th-maps.track-asia.com/styles/v1/streets.json?key=public_key"
+        const val STYLE_VN_STREETS = "https://maps.map-vina.com/styles/v1/streets.json?key=public_key"
+        const val STYLE_VN_SATELLITE = "https://maps.map-vina.com/styles/v1/satellite.json?key=public_key"
+        const val STYLE_VN_NIGHT = "https://maps.map-vina.com/styles/v1/night.json?key=public_key"
+        const val STYLE_SG_STREETS = "https://sg-maps.map-vina.com/styles/v1/streets.json?key=public_key"
+        const val STYLE_TH_STREETS = "https://th-maps.map-vina.com/styles/v1/streets.json?key=public_key"
     }
     
     fun switchMapStyle(style: String) {
-        trackasiaMap.setStyle(Style.Builder().fromUri(style)) { newStyle ->
+        mapvinaMap.setStyle(Style.Builder().fromUri(style)) { newStyle ->
             // Re-enable location component with new style
             enableLocationComponent(newStyle)
             
@@ -638,7 +638,7 @@ class GeofencingExample {
         style.addLayer(fillLayer)
         
         // Check if location is inside geofence
-        trackasiaMap.locationComponent.addOnLocationClickListener { location ->
+        mapvinaMap.locationComponent.addOnLocationClickListener { location ->
             val userPoint = Point.fromLngLat(location.longitude, location.latitude)
             val isInside = TurfJoins.inside(userPoint, polygon)
             
@@ -660,11 +660,11 @@ class GeofencingExample {
 ```kotlin
 object ApiConstants {
     // Base URLs by region
-    const val BASE_URL_VN = "https://maps.track-asia.com/"
-    const val BASE_URL_SG = "https://sg-maps.track-asia.com/"
-    const val BASE_URL_TH = "https://th-maps.track-asia.com/"
-    const val BASE_URL_TW = "https://tw-maps.track-asia.com/"
-    const val BASE_URL_MY = "https://my-maps.track-asia.com/"
+    const val BASE_URL_VN = "https://maps.map-vina.com/"
+    const val BASE_URL_SG = "https://sg-maps.map-vina.com/"
+    const val BASE_URL_TH = "https://th-maps.map-vina.com/"
+    const val BASE_URL_TW = "https://tw-maps.map-vina.com/"
+    const val BASE_URL_MY = "https://my-maps.map-vina.com/"
     
     // API Endpoints
     const val GEOCODING_ENDPOINT = "api/v1/geocode"
@@ -721,7 +721,7 @@ class RetrofitClient {
 
 ### 3. API Service Interface
 ```kotlin
-interface TrackAsiaApiService {
+interface MapVinaApiService {
     
     @GET("api/v1/reverse")
     suspend fun reverseGeocode(
@@ -755,7 +755,7 @@ interface TrackAsiaApiService {
 ```kotlin
 class ApiUsageExamples {
     private val apiService = RetrofitClient.getClient(ApiConstants.BASE_URL_VN)
-        .create(TrackAsiaApiService::class.java)
+        .create(MapVinaApiService::class.java)
     
     // Reverse Geocoding
     fun reverseGeocode(lat: Double, lng: Double) {
@@ -957,7 +957,7 @@ class MapFragment : Fragment() {
         
         // Clean up map resources
         navigationMapRoute?.onDestroy()
-        trackasiaMap?.removeOnMapClickListener(mapClickListener)
+        mapvinaMap?.removeOnMapClickListener(mapClickListener)
         
         // Clean up binding
         _binding = null
@@ -1047,19 +1047,19 @@ fun addMultipleMarkers(points: List<LatLng>) {
 
 ### 2. **ProGuard Rules**
 ```proguard
-# TrackAsia
--keep class com.trackasia.** { *; }
--keep interface com.trackasia.** { *; }
--keep enum com.trackasia.** { *; }
+# MapVina
+-keep class com.mapvina.** { *; }
+-keep interface com.mapvina.** { *; }
+-keep enum com.mapvina.** { *; }
 
 # GeoJSON
--keep class com.trackasia.geojson.** { *; }
+-keep class com.mapvina.geojson.** { *; }
 
 # Navigation
--keep class com.trackasia.navigation.** { *; }
+-keep class com.mapvina.navigation.** { *; }
 
 # Turf
--keep class com.trackasia.turf.** { *; }
+-keep class com.mapvina.turf.** { *; }
 
 # OkHttp
 -dontwarn okhttp3.**
@@ -1075,30 +1075,30 @@ fun addMultipleMarkers(points: List<LatLng>) {
 ## 📚 Tài liệu tham khảo
 
 ### Official Documentation
-- 🔗 [TrackAsia Android SDK](https://github.com/track-asia/trackasia-native)
-- 🔗 [TrackAsia Java](https://github.com/track-asia/trackasia-java)
-- 🔗 [TrackAsia Navigation Android](https://github.com/track-asia/trackasia-navigation-android)
+- 🔗 [MapVina Android SDK](https://github.com/map-vina/mapvina-native)
+- 🔗 [MapVina Java](https://github.com/map-vina/mapvina-java)
+- 🔗 [MapVina Navigation Android](https://github.com/map-vina/mapvina-navigation-android)
 - 🔗 [MapBox Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/)
 
 ### API Documentation
-- 📖 [Geocoding API](https://docs.track-asia.com/api/geocoding)
-- 📖 [Directions API](https://docs.track-asia.com/api/directions)
-- 📖 [Map Tiles API](https://docs.track-asia.com/api/maps)
+- 📖 [Geocoding API](https://docs.map-vina.com/api/geocoding)
+- 📖 [Directions API](https://docs.map-vina.com/api/directions)
+- 📖 [Map Tiles API](https://docs.map-vina.com/api/maps)
 
 ### Sample Projects
-- 💻 [TrackAsia Demo Android](https://github.com/track-asia/trackasia-demo-android)
-- 💻 [Navigation Examples](https://github.com/track-asia/navigation-examples)
+- 💻 [MapVina Demo Android](https://github.com/map-vina/mapvina-demo-android)
+- 💻 [Navigation Examples](https://github.com/map-vina/navigation-examples)
 
 ### Community Resources
-- 💬 [Stack Overflow - TrackAsia Tag](https://stackoverflow.com/questions/tagged/trackasia)
-- 💬 [GitHub Issues](https://github.com/track-asia/trackasia-native/issues)
-- 💬 [Discord Community](https://discord.gg/trackasia)
+- 💬 [Stack Overflow - MapVina Tag](https://stackoverflow.com/questions/tagged/mapvina)
+- 💬 [GitHub Issues](https://github.com/map-vina/mapvina-native/issues)
+- 💬 [Discord Community](https://discord.gg/mapvina)
 
 ---
 
 ## 📄 License
 
-TrackAsia SDK được phát hành dưới giấy phép BSD-3-Clause. Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
+MapVina SDK được phát hành dưới giấy phép BSD-3-Clause. Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
 
 ---
 
@@ -1106,12 +1106,12 @@ TrackAsia SDK được phát hành dưới giấy phép BSD-3-Clause. Xem file [
 
 Nếu bạn gặp vấn đề hoặc cần hỗ trợ:
 
-- 📧 Email: support@track-asia.com
-- 🐛 Report bugs: [GitHub Issues](https://github.com/track-asia/trackasia-native/issues)
-- 💡 Feature requests: [GitHub Discussions](https://github.com/track-asia/trackasia-native/discussions)
+- 📧 Email: support@mapvina.com
+- 🐛 Report bugs: [GitHub Issues](https://github.com/map-vina/mapvina-native/issues)
+- 💡 Feature requests: [GitHub Discussions](https://github.com/map-vina/mapvina-native/discussions)
 
 ---
 
-**Made with ❤️ by TrackAsia Team**
+**Made with ❤️ by MapVina Team**
 
 *Last updated: November 2024*

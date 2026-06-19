@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.TrackAsia" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.MapVina" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorBlue</item>
         <item name="colorPrimaryVariant">@color/colorBlue</item>

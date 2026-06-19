@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tabMode="fixed" />
 
-    <com.trackasia.sample.custom.CustomViewPager
+    <com.mapvina.sample.custom.CustomViewPager
         android:id="@+id/vpDirectionpoint"
         android:layout_width="match_parent"
         android:layout_height="0dp"

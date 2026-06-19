@@ -7,32 +7,32 @@
 
     <fragment
         android:id="@+id/mapFeatureSnapshotFragment"
-        android:name="com.trackasia.sample.MapFeatureSnapshotFragment"
+        android:name="com.mapvina.sample.MapFeatureSnapshotFragment"
         android:label="MapFeatureSnapshotFragment"
         tools:layout="@layout/fragment_feature_snapshot" />
     <fragment
         android:id="@+id/mapAnimationFragment"
-        android:name="com.trackasia.sample.MapAnimationFragment"
+        android:name="com.mapvina.sample.MapAnimationFragment"
         android:label="MapAnimationFragment"
         tools:layout="@layout/fragment_map_animation" />
     <fragment
         android:id="@+id/mapMultiPointFragment"
-        android:name="com.trackasia.sample.MapMultiPointFragment"
+        android:name="com.mapvina.sample.MapMultiPointFragment"
         android:label="MapMultiPointFragment"
         tools:layout="@layout/fragment_map_multi_point" />
     <fragment
         android:id="@+id/mapSinglePointFragment"
-        android:name="com.trackasia.sample.MapSinglePointFragment"
+        android:name="com.mapvina.sample.MapSinglePointFragment"
         android:label="MapSinglePointFragment"
         tools:layout="@layout/fragment_map_single_point" />
     <fragment
         android:id="@+id/mapClusterFragment"
-        android:name="com.trackasia.sample.MapClusterFragment"
+        android:name="com.mapvina.sample.MapClusterFragment"
         android:label="MapClusterFragment"
         tools:layout="@layout/fragment_map_cluster" />
     <fragment
         android:id="@+id/mapFeatureFragment"
-        android:name="com.trackasia.sample.MapFeatureFragment"
+        android:name="com.mapvina.sample.MapFeatureFragment"
         tools:layout="@layout/fragment_feature"
         android:label="MapFeatureFragment" >
         <action
@@ -41,12 +41,12 @@
     </fragment>
     <fragment
         android:id="@+id/mapDirectionPointFragment"
-        android:name="com.trackasia.sample.MapDirectionPointFragment"
+        android:name="com.mapvina.sample.MapDirectionPointFragment"
         tools:layout="@layout/fragment_map_direction_point"
         android:label="MapDirectionPointFragment" />
     <fragment
         android:id="@+id/mapTwoPointFragment"
-        android:name="com.trackasia.sample.MapWayPointFragment"
+        android:name="com.mapvina.sample.MapWayPointFragment"
         tools:layout="@layout/fragment_map_way_point"
         android:label="MapTwoPointFragment" />
 </navigation>

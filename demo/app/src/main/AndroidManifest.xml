@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.trackasia.sample">
+    package="com.mapvina.sample">
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -43,7 +43,7 @@
         </activity>
 
         <activity
-            android:name="com.trackasia.navigation.android.navigation.ui.v5.TrackAsiaNavigationActivity"
+            android:name="com.mapvina.navigation.android.navigation.ui.v5.MapVinaNavigationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 

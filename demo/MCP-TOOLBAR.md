@@ -10,7 +10,7 @@
 ### Các thành phần chính:
 1. **Logo và tên ứng dụng:**
    - Logo/icon ở góc trái
-   - Text "TrackAsia" ngay bên cạnh, màu trắng, font đậm
+   - Text "MapVina" ngay bên cạnh, màu trắng, font đậm
    
 2. **Tiêu đề màn hình hiện tại:**
    - Text ở giữa (như "Single Point", "Clusters",...)
@@ -104,7 +104,7 @@ logoImageView.contentMode = .scaleAspectFit
 logoImageView.tintColor = .white
 
 let appNameLabel = UILabel()
-appNameLabel.text = "TrackAsia"
+appNameLabel.text = "MapVina"
 appNameLabel.textColor = .white
 appNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
 
@@ -398,7 +398,7 @@ struct MainView: View {
                             .frame(width: 24, height: 24)
                             .foregroundColor(.white)
                         
-                        Text("TrackAsia")
+                        Text("MapVina")
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
                     }

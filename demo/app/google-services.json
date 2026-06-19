@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:817120621812:android:ae70360c4f3c69b3d91aa1",
         "android_client_info": {
-          "package_name": "com.trackasia.app"
+          "package_name": "com.mapvina.app"
         }
       },
       "oauth_client": [
@@ -47,7 +47,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:817120621812:android:a520c03d2bdf7f53d91aa1",
         "android_client_info": {
-          "package_name": "com.trackasia.sample"
+          "package_name": "com.mapvina.sample"
         }
       },
       "oauth_client": [

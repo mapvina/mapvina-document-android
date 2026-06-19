@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.trackasia.trackasiademotest"
+    namespace = "com.mapvina.mapvinademotest"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.trackasia.trackasiademotest"
+        applicationId = "com.mapvina.mapvinademotest"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -40,12 +40,12 @@ android {
 }
 
 dependencies {
-    implementation("io.github.track-asia:android-sdk:2.0.1")
-    implementation("io.github.track-asia:android-sdk-geojson:2.0.1")
-    implementation("io.github.track-asia:android-sdk-turf:2.0.1")
-    implementation("io.github.track-asia:android-plugin-annotation-v9:2.0.1")
-    implementation("io.github.track-asia:libandroid-navigation:2.0.0")
-    implementation("io.github.track-asia:libandroid-navigation-ui:2.0.0")
+    implementation("io.github.map-vina:android-sdk:2.0.1")
+    implementation("io.github.map-vina:android-sdk-geojson:2.0.1")
+    implementation("io.github.map-vina:android-sdk-turf:2.0.1")
+    implementation("io.github.map-vina:android-plugin-annotation-v9:2.0.1")
+    implementation("io.github.map-vina:libandroid-navigation:2.0.0")
+    implementation("io.github.map-vina:libandroid-navigation-ui:2.0.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

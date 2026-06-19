@@ -9,23 +9,23 @@
     tools:context=".MainActivity"
     tools:ignore="MissingDefaultResource">
 
-    <com.trackasia.android.maps.MapView
+    <com.mapvina.android.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:trackasia_cameraZoom="12"
-        app:trackasia_enableTilePrefetch="true"
-        app:trackasia_enableZMediaOverlay="true"
-        app:trackasia_renderTextureMode="true"
-        app:trackasia_renderTextureTranslucentSurface="true"
-        app:trackasia_uiAttribution="true"
-        app:trackasia_uiCompass="true"
-        app:trackasia_uiDoubleTapGestures="true"
-        app:trackasia_uiLogo="true"
-        app:trackasia_uiRotateGestures="true"
-        app:trackasia_uiScrollGestures="true"
-        app:trackasia_uiTiltGestures="true"
-        app:trackasia_uiZoomGestures="true" />
+        app:mapvina_cameraZoom="12"
+        app:mapvina_enableTilePrefetch="true"
+        app:mapvina_enableZMediaOverlay="true"
+        app:mapvina_renderTextureMode="true"
+        app:mapvina_renderTextureTranslucentSurface="true"
+        app:mapvina_uiAttribution="true"
+        app:mapvina_uiCompass="true"
+        app:mapvina_uiDoubleTapGestures="true"
+        app:mapvina_uiLogo="true"
+        app:mapvina_uiRotateGestures="true"
+        app:mapvina_uiScrollGestures="true"
+        app:mapvina_uiTiltGestures="true"
+        app:mapvina_uiZoomGestures="true" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/searchCard"
@@ -490,7 +490,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TrackAsia"
+                    android:text="MapVina"
                     android:textColor="@color/colorBlue"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -502,7 +502,7 @@
                     app:fabCustomSize="@dimen/_24sdp"
                     app:maxImageSize="@dimen/_14sdp"
                     android:layout_margin="2dp"
-                    android:contentDescription="TrackAsia Navigation"
+                    android:contentDescription="MapVina Navigation"
                     android:src="@drawable/ic_navigation_24"
                     app:backgroundTint="@color/colorBlue"
                     app:tint="@android:color/white" />

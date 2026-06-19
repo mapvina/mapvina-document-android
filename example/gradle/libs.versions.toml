@@ -11,7 +11,7 @@ material = "1.5.0"
 activity = "1.9.3"
 constraintlayout = "2.1.4"
 playServicesBasement = "18.4.0"
-trackasia = "1.0.20"
+mapvina = "1.0.20"
 androidSdk = "1.0.20"
 
 [libraries]
@@ -24,7 +24,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 play-services-basement = { group = "com.google.android.gms", name = "play-services-basement", version.ref = "playServicesBasement" }
-android-sdk = { group = "io.github.track-asia", name = "android-sdk", version.ref = "androidSdk" }
+android-sdk = { group = "io.github.map-vina", name = "android-sdk", version.ref = "androidSdk" }
 
 
 [plugins]

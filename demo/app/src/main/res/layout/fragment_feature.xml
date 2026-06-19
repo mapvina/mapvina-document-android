@@ -5,23 +5,23 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite">
 
-    <com.trackasia.android.maps.MapView
+    <com.mapvina.android.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:trackasia_cameraZoom="12"
-        app:trackasia_enableTilePrefetch="true"
-        app:trackasia_enableZMediaOverlay="true"
-        app:trackasia_renderTextureMode="true"
-        app:trackasia_renderTextureTranslucentSurface="true"
-        app:trackasia_uiAttribution="true"
-        app:trackasia_uiCompass="true"
-        app:trackasia_uiDoubleTapGestures="true"
-        app:trackasia_uiLogo="true"
-        app:trackasia_uiRotateGestures="true"
-        app:trackasia_uiScrollGestures="true"
-        app:trackasia_uiTiltGestures="true"
-        app:trackasia_uiZoomGestures="true" />
+        app:mapvina_cameraZoom="12"
+        app:mapvina_enableTilePrefetch="true"
+        app:mapvina_enableZMediaOverlay="true"
+        app:mapvina_renderTextureMode="true"
+        app:mapvina_renderTextureTranslucentSurface="true"
+        app:mapvina_uiAttribution="true"
+        app:mapvina_uiCompass="true"
+        app:mapvina_uiDoubleTapGestures="true"
+        app:mapvina_uiLogo="true"
+        app:mapvina_uiRotateGestures="true"
+        app:mapvina_uiScrollGestures="true"
+        app:mapvina_uiTiltGestures="true"
+        app:mapvina_uiZoomGestures="true" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/controlsCard"

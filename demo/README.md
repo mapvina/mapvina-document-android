@@ -1,6 +1,6 @@
 # **TRACK ASIA TÍCH HỢP**
 
-# Tích hợp TrackAsiaSample vào Android
+# Tích hợp MapVinaSample vào Android
 
 ## 1. Cấu hình Gradle
 
@@ -30,14 +30,14 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.6-bin.zip
 ```
 
 ### Module `build.gradle`
-Thêm dependencies cho TrackAsia SDK và các dịch vụ liên quan:
+Thêm dependencies cho MapVina SDK và các dịch vụ liên quan:
 
 ```gradle
 dependencies {
-    implementation('io.github.track-asia:android-sdk:2.0.2')
-    implementation('io.github.track-asia:geojson:2.0.1')
-    implementation('io.github.track-asia:turf:2.0.1')
-    implementation('io.github.track-asia:android-plugin-annotation-v9:2.0.1')
+    implementation('io.github.map-vina:android-sdk:2.0.2')
+    implementation('io.github.map-vina:geojson:2.0.1')
+    implementation('io.github.map-vina:turf:2.0.1')
+    implementation('io.github.map-vina:android-plugin-annotation-v9:2.0.1')
 }
 ```
 
@@ -45,51 +45,51 @@ dependencies {
 Thêm `MapView` vào file layout XML:
 
 ```xml
-<com.trackasia.android.maps.MapView
+<com.mapvina.android.maps.MapView
     android:id="@+id/mapView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:trackasia_cameraZoom="12"
-    app:trackasia_enableTilePrefetch="true"
-    app:trackasia_enableZMediaOverlay="true"
-    app:trackasia_renderTextureMode="true"
-    app:trackasia_renderTextureTranslucentSurface="true"
-    app:trackasia_uiAttribution="true"
-    app:trackasia_uiCompass="true"
-    app:trackasia_uiDoubleTapGestures="true"
-    app:trackasia_uiLogo="true"
-    app:trackasia_uiRotateGestures="true"
-    app:trackasia_uiScrollGestures="true"
-    app:trackasia_uiTiltGestures="true"
-    app:trackasia_uiZoomGestures="true" />
+    app:mapvina_cameraZoom="12"
+    app:mapvina_enableTilePrefetch="true"
+    app:mapvina_enableZMediaOverlay="true"
+    app:mapvina_renderTextureMode="true"
+    app:mapvina_renderTextureTranslucentSurface="true"
+    app:mapvina_uiAttribution="true"
+    app:mapvina_uiCompass="true"
+    app:mapvina_uiDoubleTapGestures="true"
+    app:mapvina_uiLogo="true"
+    app:mapvina_uiRotateGestures="true"
+    app:mapvina_uiScrollGestures="true"
+    app:mapvina_uiTiltGestures="true"
+    app:mapvina_uiZoomGestures="true" />
 ```
 
-## 3. Khởi tạo TrackAsiaSample trong Activity/Fragment
+## 3. Khởi tạo MapVinaSample trong Activity/Fragment
 
 ### Import thư viện cần thiết:
 
 ```kotlin
-import com.trackasia.android.maps.MapView
-import com.trackasia.android.maps.TrackAsiaMap
-import com.trackasia.android.maps.CameraPosition
-import com.trackasia.android.maps.Style
-import com.trackasia.android.geometry.LatLng
-import com.trackasia.android.TrackAsia
-import com.trackasia.android.navigation.ui.NavigationMapRoute
+import com.mapvina.android.maps.MapView
+import com.mapvina.android.maps.MapVinaMap
+import com.mapvina.android.maps.CameraPosition
+import com.mapvina.android.maps.Style
+import com.mapvina.android.geometry.LatLng
+import com.mapvina.android.MapVina
+import com.mapvina.android.navigation.ui.NavigationMapRoute
 ```
 
 ### Khai báo biến:
 
 ```kotlin
-private lateinit var trackasiaMap: TrackAsiaMap
-private var styleUrl = "https://maps.track-asia.com/styles/v1/streets.json?key=public_key"
+private lateinit var mapvinaMap: MapVinaMap
+private var styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public_key"
 private lateinit var navigationMapRoute: NavigationMapRoute
 ```
 
-### Khởi tạo TrackAsia trong `onCreateView()`:
+### Khởi tạo MapVina trong `onCreateView()`:
 
 ```kotlin
-TrackAsia.getInstance(requireActivity())
+MapVina.getInstance(requireActivity())
 ```
 
 ### Thiết lập bản đồ trong `onViewCreated()`:
@@ -100,7 +100,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     
     mapView.onCreate(savedInstanceState)
     mapView.getMapAsync { map ->
-        this.trackasiaMap = map
+        this.mapvinaMap = map
         
         map.setStyle(Style.Builder().fromUri(styleUrl)) { style ->
             enableLocationComponent(style)
@@ -157,28 +157,28 @@ override fun onSaveInstanceState(outState: Bundle) {
 ## 5. Hình ảnh Sample
 
 <p align="center">
-  <img src="https://git.advn.vn/sangnguyen/trackasia-document/-/raw/master/images/android_1.JPEG" alt="Android" width="18%">   
-  <img src="https://git.advn.vn/sangnguyen/trackasia-document/-/raw/master/images/android_2.JPEG" alt="Android" width="18%">
-  <img src="https://git.advn.vn/sangnguyen/trackasia-document/-/raw/master/images/android_3.JPEG" alt="Android" width="18%">
-  <img src="https://git.advn.vn/sangnguyen/trackasia-document/-/raw/master/images/android_4.JPEG" alt="Android" width="18%">
-  <img src="https://git.advn.vn/sangnguyen/trackasia-document/-/raw/master/images/android_5.JPEG" alt="Android" width="18%">
-  <img src="https://git.advn.vn/sangnguyen/trackasia-document/-/raw/master/images/android_6.JPEG" alt="Android" width="18%">
-  <img src="https://git.advn.vn/sangnguyen/trackasia-document/-/raw/master/images/android_7.JPEG" alt="Android" width="18%">
+  <img src="https://git.advn.vn/sangnguyen/mapvina-document/-/raw/master/images/android_1.JPEG" alt="Android" width="18%">   
+  <img src="https://git.advn.vn/sangnguyen/mapvina-document/-/raw/master/images/android_2.JPEG" alt="Android" width="18%">
+  <img src="https://git.advn.vn/sangnguyen/mapvina-document/-/raw/master/images/android_3.JPEG" alt="Android" width="18%">
+  <img src="https://git.advn.vn/sangnguyen/mapvina-document/-/raw/master/images/android_4.JPEG" alt="Android" width="18%">
+  <img src="https://git.advn.vn/sangnguyen/mapvina-document/-/raw/master/images/android_5.JPEG" alt="Android" width="18%">
+  <img src="https://git.advn.vn/sangnguyen/mapvina-document/-/raw/master/images/android_6.JPEG" alt="Android" width="18%">
+  <img src="https://git.advn.vn/sangnguyen/mapvina-document/-/raw/master/images/android_7.JPEG" alt="Android" width="18%">
 </p>
 
 
 ## 6. Link Github Core
 ```kotlin
 
-[⭐️ TrackAsia Java - Chứa các thư viện hỗ trợ Map](https://github.com/track-asia/trackasia-java)
+[⭐️ MapVina Java - Chứa các thư viện hỗ trợ Map](https://github.com/map-vina/mapvina-java)
 
-[⭐️ TrackAsia Native - Chứa các thư viện core deploy chính của Map Chọn Android](https://github.com/track-asia/trackasia-native)
+[⭐️ MapVina Native - Chứa các thư viện core deploy chính của Map Chọn Android](https://github.com/map-vina/mapvina-native)
 
-[⭐️ TrackAsia Navigation - Chứa các thư viện Navigation, Directions của Map](https://github.com/track-asia/trackasia-navigation-android)
+[⭐️ MapVina Navigation - Chứa các thư viện Navigation, Directions của Map](https://github.com/map-vina/mapvina-navigation-android)
 
 ```
 
 ## 7. Kết luận
 ```kotlin
-Với hướng dẫn trên, bạn đã có thể tích hợp TrackAsiaSample vào ứng dụng Android, thiết lập bản đồ với giao diện tuỳ chỉnh, và quản lý vòng đời của `MapView` đúng cách. Bạn có thể mở rộng tính năng như hiển thị marker, vẽ tuyến đường, và sử dụng navigation bằng cách tích hợp thêm các API của TrackAsia.
+Với hướng dẫn trên, bạn đã có thể tích hợp MapVinaSample vào ứng dụng Android, thiết lập bản đồ với giao diện tuỳ chỉnh, và quản lý vòng đời của `MapView` đúng cách. Bạn có thể mở rộng tính năng như hiển thị marker, vẽ tuyến đường, và sử dụng navigation bằng cách tích hợp thêm các API của MapVina.
 ```

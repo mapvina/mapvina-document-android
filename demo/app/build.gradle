@@ -10,10 +10,10 @@ android {
     compileSdkVersion 34
 //    buildToolsVersion "30.0.3"
 
-    namespace = "com.trackasia.sample"
+    namespace = "com.mapvina.sample"
 
     defaultConfig {
-        applicationId "com.trackasia.sample"
+        applicationId "com.mapvina.sample"
         minSdkVersion 26
         targetSdkVersion 35
         versionCode 10
@@ -38,9 +38,9 @@ android {
     signingConfigs {
         release {
             storeFile rootProject.file('app/keystore/keystore.jks')
-            storePassword "trackasia"
-            keyAlias "trackasia"
-            keyPassword "trackasia"
+            storePassword "mapvina"
+            keyAlias "mapvina"
+            keyPassword "mapvina"
         }
     }
 
@@ -105,17 +105,17 @@ dependencies {
     // Logging
     implementation 'com.jakewharton.timber:timber:5.0.1'
     
-    // TrackAsia SDK components
-    implementation 'io.github.track-asia:android-sdk:2.0.2'
-    implementation 'io.github.track-asia:geojson:2.0.2'
-    implementation 'io.github.track-asia:turf:2.0.2'
+    // MapVina SDK components
+    implementation 'io.github.map-vina:android-sdk:2.0.2'
+    implementation 'io.github.map-vina:geojson:2.0.2'
+    implementation 'io.github.map-vina:turf:2.0.2'
     configurations {
-        implementation.exclude group: 'io.github.track-asia', module: 'android-sdk-geojson'
-        implementation.exclude group: 'io.github.track-asia', module: 'android-sdk-turf'
+        implementation.exclude group: 'io.github.map-vina', module: 'android-sdk-geojson'
+        implementation.exclude group: 'io.github.map-vina', module: 'android-sdk-turf'
     }
-    implementation 'io.github.track-asia:android-plugin-annotation-v9:2.0.1'
-    implementation 'io.github.track-asia:navigation-core:2.0.2'
-    implementation 'io.github.track-asia:navigation-ui-android:2.0.2'
+    implementation 'io.github.map-vina:android-plugin-annotation-v9:2.0.1'
+    implementation 'io.github.map-vina:navigation-core:2.0.2'
+    implementation 'io.github.map-vina:navigation-ui-android:2.0.2'
 
 
     testImplementation 'junit:junit:4.+'
@@ -130,10 +130,10 @@ configurations.all {
         force "org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10"
         force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10"
         force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10"
-        force 'io.github.track-asia:android-sdk:2.0.2'
-        force 'io.github.track-asia:geojson:2.0.2'
-        force 'io.github.track-asia:turf:2.0.2'
-        exclude group: 'io.github.track-asia', module: 'android-sdk-geojson'
-        exclude group: 'io.github.track-asia', module: 'android-sdk-turf'
+        force 'io.github.map-vina:android-sdk:2.0.2'
+        force 'io.github.map-vina:geojson:2.0.2'
+        force 'io.github.map-vina:turf:2.0.2'
+        exclude group: 'io.github.map-vina', module: 'android-sdk-geojson'
+        exclude group: 'io.github.map-vina', module: 'android-sdk-turf'
     }
 }
