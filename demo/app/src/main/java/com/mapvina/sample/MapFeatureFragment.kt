@@ -13,19 +13,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.mapvina.android.MapVina
-import com.mapvina.android.annotations.MarkerOptions
-import com.mapvina.android.annotations.Polygon
-import com.mapvina.android.annotations.PolygonOptions
-import com.mapvina.android.annotations.Polyline
-import com.mapvina.android.annotations.PolylineOptions
-import com.mapvina.android.camera.CameraPosition
-import com.mapvina.android.camera.CameraUpdateFactory
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.location.permissions.PermissionsListener
-import com.mapvina.android.location.permissions.PermissionsManager
-import com.mapvina.android.maps.Style
-import com.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.annotations.MarkerOptions
+import io.github.mapvina.android.annotations.Polygon
+import io.github.mapvina.android.annotations.PolygonOptions
+import io.github.mapvina.android.annotations.Polyline
+import io.github.mapvina.android.annotations.PolylineOptions
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.camera.CameraUpdateFactory
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.location.permissions.PermissionsListener
+import io.github.mapvina.android.location.permissions.PermissionsManager
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.maps.MapVinaMap
 import com.mapvina.sample.databinding.FragmentFeatureBinding
 import com.mapvina.sample.utils.GeoParseUtil
 import com.mapvina.sample.utils.MapUtils
@@ -53,7 +53,7 @@ class MapFeatureFragment : Fragment(), PermissionsListener, View.OnClickListener
     private val binding get() = _binding!!
     private var permissionsManager: PermissionsManager = PermissionsManager(this)
 
-    private var styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public"
+    private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public"
     private var latLngLocation: LatLng? = LatLng(10.728073, 106.624054)
     private var zoomLocation: Double = 10.0
     private var idCountry: String? = "vn"

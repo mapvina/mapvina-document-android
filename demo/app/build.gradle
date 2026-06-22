@@ -7,7 +7,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion 34
+    compileSdkVersion 35
+    ndkVersion "27.1.12297006"
 //    buildToolsVersion "30.0.3"
 
     namespace = "com.mapvina.sample"
@@ -20,11 +21,6 @@ android {
         versionName "1.0.7"
         multiDexEnabled true
         ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
-        externalNativeBuild {
-            cmake {
-                abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
-            }
-        }
     }
 
     splits {
@@ -106,16 +102,8 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
     
     // MapVina SDK components
-    implementation 'io.github.map-vina:android-sdk:2.0.2'
-    implementation 'io.github.map-vina:geojson:2.0.2'
-    implementation 'io.github.map-vina:turf:2.0.2'
-    configurations {
-        implementation.exclude group: 'io.github.map-vina', module: 'android-sdk-geojson'
-        implementation.exclude group: 'io.github.map-vina', module: 'android-sdk-turf'
-    }
-    implementation 'io.github.map-vina:android-plugin-annotation-v9:2.0.1'
-    implementation 'io.github.map-vina:navigation-core:2.0.2'
-    implementation 'io.github.map-vina:navigation-ui-android:2.0.2'
+    implementation 'io.github.mapvina:android-sdk:1.0.1'
+    implementation 'io.github.mapvina:android-plugin-annotation-v9:1.0.0'
 
 
     testImplementation 'junit:junit:4.+'
@@ -130,10 +118,5 @@ configurations.all {
         force "org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10"
         force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10"
         force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10"
-        force 'io.github.map-vina:android-sdk:2.0.2'
-        force 'io.github.map-vina:geojson:2.0.2'
-        force 'io.github.map-vina:turf:2.0.2'
-        exclude group: 'io.github.map-vina', module: 'android-sdk-geojson'
-        exclude group: 'io.github.map-vina', module: 'android-sdk-turf'
     }
 }

@@ -2,7 +2,7 @@ package com.mapvina.sample.api.repository
 
 import android.app.Activity
 import android.content.Context
-import com.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.geometry.LatLng
 import com.mapvina.sample.api.RetrofitClient
 import com.mapvina.sample.api.model.GeoCodingData
 import com.mapvina.sample.api.service.APIService

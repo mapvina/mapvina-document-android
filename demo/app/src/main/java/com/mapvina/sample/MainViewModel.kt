@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.geometry.LatLng
 import com.mapvina.sample.api.model.Feature
 import com.mapvina.sample.api.model.GeoCodingData
 import com.mapvina.sample.api.repository.ResultAPI

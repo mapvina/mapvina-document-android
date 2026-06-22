@@ -1,7 +1,7 @@
 package com.mapvina.sample.model
 
 import android.util.Log
-import com.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.geometry.LatLng
 import org.json.JSONObject
 
 data class PoiResult(

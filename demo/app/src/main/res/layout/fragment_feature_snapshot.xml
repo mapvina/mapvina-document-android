@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1" />
 
-            <com.mapvina.android.maps.MapView
+            <io.github.mapvina.android.maps.MapView
                 android:id="@+id/mapView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

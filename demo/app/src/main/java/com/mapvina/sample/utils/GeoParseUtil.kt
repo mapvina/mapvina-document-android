@@ -2,9 +2,9 @@ package com.mapvina.sample.utils
 
 import android.content.Context
 import android.text.TextUtils
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.geojson.FeatureCollection
-import com.mapvina.geojson.Point
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.geojson.FeatureCollection
+import io.github.mapvina.geojson.Point
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream

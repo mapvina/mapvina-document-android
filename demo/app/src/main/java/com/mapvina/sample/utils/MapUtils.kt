@@ -13,15 +13,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import com.mapvina.android.camera.CameraUpdateFactory
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.location.LocationComponent
-import com.mapvina.android.location.LocationComponentActivationOptions
-import com.mapvina.android.location.modes.CameraMode
-import com.mapvina.android.location.modes.RenderMode
-import com.mapvina.android.location.permissions.PermissionsManager
-import com.mapvina.android.maps.Style
-import com.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.camera.CameraUpdateFactory
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.location.LocationComponent
+import io.github.mapvina.android.location.LocationComponentActivationOptions
+import io.github.mapvina.android.location.modes.CameraMode
+import io.github.mapvina.android.location.modes.RenderMode
+import io.github.mapvina.android.location.permissions.PermissionsManager
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.maps.MapVinaMap
 import com.mapvina.sample.R
 import com.mapvina.sample.api.Constants
 

@@ -16,20 +16,20 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.PolylineOptions
-import com.mapvina.android.MapVina
-import com.mapvina.android.camera.CameraPosition
-import com.mapvina.android.location.permissions.PermissionsListener
-import com.mapvina.android.location.permissions.PermissionsManager
-import com.mapvina.android.maps.MapView
-import com.mapvina.android.maps.Style
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.style.layers.LineLayer
-import com.mapvina.android.style.layers.Property
-import com.mapvina.android.style.layers.PropertyFactory
-import com.mapvina.android.style.sources.GeoJsonSource
-import com.mapvina.geojson.Feature
-import com.mapvina.geojson.LineString
-import com.mapvina.geojson.Point
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.location.permissions.PermissionsListener
+import io.github.mapvina.android.location.permissions.PermissionsManager
+import io.github.mapvina.android.maps.MapView
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.style.layers.LineLayer
+import io.github.mapvina.android.style.layers.Property
+import io.github.mapvina.android.style.layers.PropertyFactory
+import io.github.mapvina.android.style.sources.GeoJsonSource
+import io.github.mapvina.geojson.Feature
+import io.github.mapvina.geojson.LineString
+import io.github.mapvina.geojson.Point
 import com.mapvina.sample.databinding.FragmentFeatureSnapshotBinding
 import com.mapvina.sample.utils.MapUtils
 import okhttp3.Call
@@ -40,7 +40,7 @@ import okhttp3.Response
 import org.json.JSONObject
 import java.io.IOException
 import com.google.android.gms.maps.model.LatLng as GoogleLatLng
-import com.mapvina.android.geometry.LatLng as MapVinaLatLng
+import io.github.mapvina.android.geometry.LatLng as MapVinaLatLng
 
 
 /**
@@ -57,7 +57,7 @@ class MapFeatureSnapshotFragment : Fragment(), PermissionsListener, View.OnClick
     private val binding get() = _binding
     private var permissionsManager: PermissionsManager = PermissionsManager(this)
 
-    private var styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public"
+    private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public"
     private var latLngLocation: MapVinaLatLng? = MapVinaLatLng(10.728073, 106.624054)
     private var zoomLocation: Double = 10.0
     private var idCountry: String? = "vn"
@@ -174,7 +174,7 @@ class MapFeatureSnapshotFragment : Fragment(), PermissionsListener, View.OnClick
         try {
             val cameraPosition = CameraPosition.Builder().target(point).zoom(zoomLocation).build()
             val cameraUpdate =
-                com.mapvina.android.camera.CameraUpdateFactory.newCameraPosition(cameraPosition)
+                io.github.mapvina.android.camera.CameraUpdateFactory.newCameraPosition(cameraPosition)
             mapvinaMap.animateCamera(cameraUpdate, 1000)
         } catch (e: Exception) {
             Log.d("ERROR CAMERA", e.toString())
@@ -244,7 +244,7 @@ class MapFeatureSnapshotFragment : Fragment(), PermissionsListener, View.OnClick
     private fun drawRoute(origin: GoogleLatLng, destination: GoogleLatLng) {
         val client = OkHttpClient()
 
-        val url = "https://dev.maps.map-vina.com/route/v1/directions/json?" +
+        val url = "https://dev.maps.mapvina.com/route/v1/directions/json?" +
                 "mode=driving&" +
                 "origin=${origin.longitude},${origin.latitude}&" +
                 "destination=${destination.longitude},${destination.latitude}"
@@ -330,7 +330,7 @@ class MapFeatureSnapshotFragment : Fragment(), PermissionsListener, View.OnClick
     private fun drawMapVinaRoute(origin: MapVinaLatLng, destination: MapVinaLatLng) {
         val client = OkHttpClient()
 
-        val url = "https://dev.maps.map-vina.com/route/v1/directions/json?" +
+        val url = "https://dev.maps.mapvina.com/route/v1/directions/json?" +
                 "mode=driving&" +
                 "origin=${origin.longitude},${origin.latitude}&" +
                 "destination=${destination.longitude},${destination.latitude}"
@@ -359,10 +359,10 @@ class MapFeatureSnapshotFragment : Fragment(), PermissionsListener, View.OnClick
                                 // Draw route on MapVinaSample
                                 mapvinaMap.getStyle { style ->
                                     val coordinates = decodeMapVinaPolyline(geometry)
-                                    val lineString = LineString.fromLngLats(coordinates)
-                                    val feature = Feature.fromGeometry(lineString)
+                                    val coordsStr = coordinates.joinToString(",") { "[${it.longitude()},${it.latitude()}]" }
+                                    val geoJsonStr = "{\"type\":\"Feature\",\"geometry\":{\"type\":\"LineString\",\"coordinates\":[$coordsStr]}}"
 
-                                    style.addSource(GeoJsonSource("route-source", feature))
+                                    style.addSource(GeoJsonSource("route-source", geoJsonStr))
 
                                     val routeLayer = LineLayer("route-layer", "route-source")
                                     routeLayer.setProperties(

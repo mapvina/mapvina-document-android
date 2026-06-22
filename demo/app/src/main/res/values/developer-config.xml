@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--    <string name="base_url" translatable="false">https://maps.map-vina.com/</string>-->
+<!--    <string name="base_url" translatable="false">https://maps.mapvina.com/</string>-->
     <string name="mapbox_access_token" translatable="false">YOUR_MAPBOX_PUBLIC_TOKEN</string>
-    <string name="map_style_dark" translatable="false">https://maps.map-vina.com/styles/v1/streets.json?key=public</string>
-    <string name="map_style_light" translatable="false">https://maps.map-vina.com/styles/v1/streets.json?key=public</string>
+    <string name="map_style_dark" translatable="false">https://maps.mapvina.com/styles/v1/streets.json?key=public</string>
+    <string name="map_style_light" translatable="false">https://maps.mapvina.com/styles/v1/streets.json?key=public</string>
 </resources>

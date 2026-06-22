@@ -23,18 +23,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mapvina.android.MapVina
-import com.mapvina.android.annotations.MarkerOptions
-import com.mapvina.android.camera.CameraPosition
-import com.mapvina.android.camera.CameraUpdateFactory
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.location.permissions.PermissionsListener
-import com.mapvina.android.location.permissions.PermissionsManager
-import com.mapvina.android.maps.Style
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.geojson.Point
-import com.mapvina.navigation.android.navigation.ui.v5.route.NavigationMapRoute
-import com.mapvina.navigation.core.navigation.MapVinaNavigation
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.annotations.MarkerOptions
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.camera.CameraUpdateFactory
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.location.permissions.PermissionsListener
+import io.github.mapvina.android.location.permissions.PermissionsManager
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.geojson.Point
 import com.mapvina.sample.adapter.PoiResultAdapter
 import com.mapvina.sample.api.Constants
 import com.mapvina.sample.api.model.Feature
@@ -62,11 +60,10 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
     private val binding get() = _binding!!
     private lateinit var mapvinaMap: MapVinaMap
     private var permissionsManager: PermissionsManager = PermissionsManager(this)
-    private var navigationMapRoute: NavigationMapRoute? = null
     private var addressTo: Point? = null
     private var addressList: List<String>? = null
     private var addressListData: List<Feature>? = null
-    private var styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public"
+    private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public"
     private lateinit var sharedPreferences: SharedPreferences
     private var latLngLocation: LatLng? = LatLng(10.728073, 106.624054)
     private var zoomLocation: Double = 10.0
@@ -150,7 +147,6 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
                     showPointMap(point)
                     return@addOnMapClickListener true
                 }
-                navigationMapRoute = NavigationMapRoute(binding.mapView, map)
                 cameraAnimation(latLngLocation!!, zoomLevel)
             } catch (e: Exception) {
                 Log.d("ERROR MAP:", e.toString())
@@ -192,14 +188,6 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
         }
     }
 
-    private class MyBroadcastReceiver(navigation: MapVinaNavigation) : BroadcastReceiver() {
-        private val weakNavigation: WeakReference<MapVinaNavigation> = WeakReference(navigation)
-
-        override fun onReceive(context: Context, intent: Intent) {
-            val navigation = weakNavigation.get()
-            navigation?.stopNavigation()
-        }
-    }
 
 
     fun hideKeyboard(activity: Activity) {
@@ -534,7 +522,7 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
         val radius = 30000 // 30km radius
 
         // Luôn sử dụng API thực tế, không dùng dữ liệu mẫu
-        val url = "https://maps.map-vina.com/api/v2/place/nearbysearch/json" +
+        val url = "https://maps.mapvina.com/api/v2/place/nearbysearch/json" +
                 "?location=${mapCenter.latitude}%2C${mapCenter.longitude}" +
                 "&radius=$radius" +
                 "&key=public_key" +
@@ -944,7 +932,7 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
                     drawable?.let {
                         val bitmap = getBitmapFromDrawable(it)
                         bitmap?.let { bmp ->
-                            val iconFactory = com.mapvina.android.annotations.IconFactory.getInstance(requireContext())
+                            val iconFactory = io.github.mapvina.android.annotations.IconFactory.getInstance(requireContext())
                             markerOptions.icon(iconFactory.fromBitmap(bmp))
                         }
                     }
@@ -969,7 +957,7 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
         // Di chuyển camera để hiển thị tất cả các marker
         if (poiMarkers.isNotEmpty()) {
             try {
-                val builder = com.mapvina.android.geometry.LatLngBounds.Builder()
+                val builder = io.github.mapvina.android.geometry.LatLngBounds.Builder()
                 poiMarkers.forEach { builder.include(it) }
                 val bounds = builder.build()
 
@@ -1003,7 +991,7 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
     /**
      * Tạo hiệu ứng bounce cho marker 
      */
-    private fun bounceMarker(marker: com.mapvina.android.annotations.Marker) {
+    private fun bounceMarker(marker: io.github.mapvina.android.annotations.Marker) {
         val originalPosition = marker.position
         val handler = android.os.Handler(android.os.Looper.getMainLooper())
         
@@ -1231,7 +1219,7 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
 
             // Thử sử dụng icon đích đặc biệt với cách xử lý tốt hơn
             try {
-                val iconFactory = com.mapvina.android.annotations.IconFactory.getInstance(requireContext())
+                val iconFactory = io.github.mapvina.android.annotations.IconFactory.getInstance(requireContext())
                 val drawable = androidx.core.content.ContextCompat.getDrawable(requireContext(), R.drawable.ic_marker_destination)
                 
                 if (drawable != null) {
@@ -1294,7 +1282,7 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
         val destination = targetLatLng!!
 
         // Xây dựng URL cho API chỉ đường
-        val url = "https://maps.map-vina.com/route/v1/car/" +
+        val url = "https://maps.mapvina.com/route/v1/car/" +
                 "${origin.longitude},${origin.latitude};" +
                 "${destination.longitude},${destination.latitude}" +
                 ".json?geometries=polyline6&steps=true&overview=full&key=public_key"
@@ -1341,49 +1329,9 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
         Log.d("NAVIGATION", "Processing route response: ${responseJson.take(100)}...")
         
         try {
-            val mapvinaResponse = com.mapvina.navigation.core.models.DirectionsResponse.fromJson(responseJson)
-            
-            if (mapvinaResponse.routes.isEmpty()) {
-                activity?.runOnUiThread { 
-                    loading.dismiss()
-                    showToast("Không tìm thấy tuyến đường nào") 
-                }
-                return
-            }
-            
-            val firstRoute = mapvinaResponse.routes.first()
-            if (firstRoute.geometry.isEmpty()) {
-                activity?.runOnUiThread { 
-                    loading.dismiss()
-                    showToast("Không tìm thấy hình dạng tuyến đường") 
-                }
-                return
-            }
-            
-            Log.d("NAVIGATION", "Route found: Distance=${firstRoute.distance}m, Duration=${firstRoute.duration}s")
-            
             activity?.runOnUiThread {
                 loading.dismiss()
-                
-                // Hiển thị tuyến đường trên bản đồ
-                if (navigationMapRoute == null) {
-                    navigationMapRoute = com.mapvina.navigation.android.navigation.ui.v5.route.NavigationMapRoute(
-                        null, binding.mapView, mapvinaMap
-                    )
-                }
-                
-                // Xóa tuyến đường cũ và thêm tuyến đường mới
-                navigationMapRoute?.removeRoute()
-                navigationMapRoute?.addRoute(firstRoute)
-                
-                // Hiển thị thông tin tuyến đường
-                val distance = formatDistance(firstRoute.distance.toDouble())
-                val duration = formatDuration(firstRoute.duration.toLong())
-                
-                showToast("Đã tìm thấy tuyến đường: $distance, $duration")
-                
-                // Hiển thị nút bắt đầu điều hướng
-                // calculateDirectionButton.visibility = View.VISIBLE
+                showToast("Route found (navigation SDK not available)")
             }
         } catch (e: Exception) {
             Log.e("NAVIGATION", "Error processing route response", e)
