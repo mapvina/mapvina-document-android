@@ -17,6 +17,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.PolylineOptions
 import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.WellKnownTileServer
 import io.github.mapvina.android.camera.CameraPosition
 import io.github.mapvina.android.location.permissions.PermissionsListener
 import io.github.mapvina.android.location.permissions.PermissionsManager
@@ -78,7 +79,7 @@ class MapFeatureSnapshotFragment : Fragment(), PermissionsListener, View.OnClick
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        MapVina.getInstance(requireActivity())
+        MapVina.getInstance(requireActivity(), "public", WellKnownTileServer.MapVina)
         _binding = FragmentFeatureSnapshotBinding.inflate(inflater, container, false)
         return binding?.root
 

@@ -24,6 +24,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.WellKnownTileServer
 import io.github.mapvina.android.annotations.MarkerOptions
 import io.github.mapvina.android.camera.CameraPosition
 import io.github.mapvina.android.camera.CameraUpdateFactory
@@ -101,7 +102,7 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        MapVina.getInstance(requireActivity())
+        MapVina.getInstance(requireActivity(), "public", WellKnownTileServer.MapVina)
         _binding = FragmentMapSinglePointBinding.inflate(inflater, container, false)
         return binding.root
 

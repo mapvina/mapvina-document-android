@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.WellKnownTileServer
 import io.github.mapvina.android.annotations.MarkerOptions
 import io.github.mapvina.android.annotations.Polygon
 import io.github.mapvina.android.annotations.PolygonOptions
@@ -74,7 +75,7 @@ class MapFeatureFragment : Fragment(), PermissionsListener, View.OnClickListener
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        MapVina.getInstance(requireActivity())
+        MapVina.getInstance(requireActivity(), "public", WellKnownTileServer.MapVina)
         _binding = FragmentFeatureBinding.inflate(inflater, container, false)
         return binding.root
 
