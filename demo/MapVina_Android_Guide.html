@@ -42,12 +42,12 @@
   <p>Thêm repositories trong dự án (google(), mavenCentral()). Thêm dependencies MapVina trong module app:</p>
   <pre><code>// app/build.gradle (trích)
 dependencies {
-  implementation 'io.github.map-vina:android-sdk:2.0.2'
-  implementation 'io.github.map-vina:geojson:2.0.2'
-  implementation 'io.github.map-vina:turf:2.0.2'
-  implementation 'io.github.map-vina:android-plugin-annotation-v9:2.0.1'
-  implementation 'io.github.map-vina:navigation-core:2.0.2'
-  implementation 'io.github.map-vina:navigation-ui-android:2.0.2'
+  implementation 'io.github.mapvina:android-sdk:2.0.2'
+  implementation 'io.github.mapvina:geojson:2.0.2'
+  implementation 'io.github.mapvina:turf:2.0.2'
+  implementation 'io.github.mapvina:android-plugin-annotation-v9:2.0.1'
+  implementation 'io.github.mapvina:navigation-core:2.0.2'
+  implementation 'io.github.mapvina:navigation-ui-android:2.0.2'
 }
 </code></pre>
   <div class="note">Khuyến nghị quản lý API key bằng Secrets Gradle Plugin, không hardcode key trong mã nguồn.</div>
@@ -72,7 +72,7 @@ dependencies {
   <h2 id="init">5) Khởi tạo map trong Fragment/Activity</h2>
   <pre><code>// Kotlin (tối giản)
 private lateinit var mapvinaMap: com.mapvina.android.maps.MapVinaMap
-private var styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public"
+private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public"
 
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
   com.mapvina.android.MapVina.getInstance(requireActivity())
@@ -114,7 +114,7 @@ val update = com.mapvina.android.camera.CameraUpdateFactory.newLatLngZoom(
 mapvinaMap.animateCamera(update, 1000)
 
 // Đổi style runtime
-mapvinaMap.setStyle("https://maps.map-vina.com/styles/v1/night.json?key=public")
+mapvinaMap.setStyle("https://maps.mapvina.com/styles/v1/night.json?key=public")
 </code></pre>
 
   <h2 id="navigation">9) Routing & Navigation</h2>

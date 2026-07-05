@@ -48,11 +48,11 @@ The `.cursorrules` file contains IDE configuration for the Cursor editor, specif
 ### 3.1 API Endpoints (Constants.kt)
 
 - **Base URLs** for different regions:
-  - Vietnam: https://maps.map-vina.com/
-  - Singapore: https://sg-maps.map-vina.com/
-  - Thailand: https://th-maps.map-vina.com/
-  - Taiwan: https://tw-maps.map-vina.com/
-  - Malaysia: https://my-maps.map-vina.com/
+  - Vietnam: https://maps.mapvina.com/
+  - Singapore: https://sg-maps.mapvina.com/
+  - Thailand: https://th-maps.mapvina.com/
+  - Taiwan: https://tw-maps.mapvina.com/
+  - Malaysia: https://my-maps.mapvina.com/
 
 - **Map Styles**:
   - Streets style
@@ -170,15 +170,15 @@ class NetworkManager {
 ```swift
 struct APIConstants {
     // Base URLs
-    static let baseUrlVN = "https://maps.map-vina.com/"
-    static let baseUrlSG = "https://sg-maps.map-vina.com/"
-    static let baseUrlTH = "https://th-maps.map-vina.com/"
-    static let baseUrlTW = "https://tw-maps.map-vina.com/"
-    static let baseUrlMI = "https://my-maps.map-vina.com/"
+    static let baseUrlVN = "https://maps.mapvina.com/"
+    static let baseUrlSG = "https://sg-maps.mapvina.com/"
+    static let baseUrlTH = "https://th-maps.mapvina.com/"
+    static let baseUrlTW = "https://tw-maps.mapvina.com/"
+    static let baseUrlMI = "https://my-maps.mapvina.com/"
     
     // Style URLs
-    static let styleUrlVN = "https://maps.map-vina.com/styles/v2/streets.json?key=public"
-    static let styleUrlSG = "https://sg-maps.map-vina.com/styles/v2/streets.json?key=public"
+    static let styleUrlVN = "https://maps.mapvina.com/styles/v2/streets.json?key=public"
+    static let styleUrlSG = "https://sg-maps.mapvina.com/styles/v2/streets.json?key=public"
     // Add other style URLs similarly
     
     // API Endpoints

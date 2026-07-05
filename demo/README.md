@@ -34,10 +34,10 @@ Thêm dependencies cho MapVina SDK và các dịch vụ liên quan:
 
 ```gradle
 dependencies {
-    implementation('io.github.map-vina:android-sdk:2.0.2')
-    implementation('io.github.map-vina:geojson:2.0.1')
-    implementation('io.github.map-vina:turf:2.0.1')
-    implementation('io.github.map-vina:android-plugin-annotation-v9:2.0.1')
+    implementation('io.github.mapvina:android-sdk:2.0.2')
+    implementation('io.github.mapvina:geojson:2.0.1')
+    implementation('io.github.mapvina:turf:2.0.1')
+    implementation('io.github.mapvina:android-plugin-annotation-v9:2.0.1')
 }
 ```
 
@@ -82,7 +82,7 @@ import com.mapvina.android.navigation.ui.NavigationMapRoute
 
 ```kotlin
 private lateinit var mapvinaMap: MapVinaMap
-private var styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public_key"
+private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public_key"
 private lateinit var navigationMapRoute: NavigationMapRoute
 ```
 
@@ -170,11 +170,11 @@ override fun onSaveInstanceState(outState: Bundle) {
 ## 6. Link Github Core
 ```kotlin
 
-[⭐️ MapVina Java - Chứa các thư viện hỗ trợ Map](https://github.com/map-vina/mapvina-java)
+[⭐️ MapVina Java - Chứa các thư viện hỗ trợ Map](https://github.com/mapvina/mapvina-java)
 
-[⭐️ MapVina Native - Chứa các thư viện core deploy chính của Map Chọn Android](https://github.com/map-vina/mapvina-native)
+[⭐️ MapVina Native - Chứa các thư viện core deploy chính của Map Chọn Android](https://github.com/mapvina/mapvina-native)
 
-[⭐️ MapVina Navigation - Chứa các thư viện Navigation, Directions của Map](https://github.com/map-vina/mapvina-navigation-android)
+[⭐️ MapVina Navigation - Chứa các thư viện Navigation, Directions của Map](https://github.com/mapvina/mapvina-navigation-android)
 
 ```
 

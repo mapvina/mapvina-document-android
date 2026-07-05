@@ -145,18 +145,18 @@ android {
 
 dependencies {
     // MapVina Core SDK
-    implementation('io.github.map-vina:android-sdk:2.0.2')
+    implementation('io.github.mapvina:android-sdk:2.0.2')
     
     // MapVina Data Models
-    implementation('io.github.map-vina:android-sdk-geojson:2.0.1')
-    implementation('io.github.map-vina:android-sdk-turf:2.0.1')
+    implementation('io.github.mapvina:android-sdk-geojson:2.0.1')
+    implementation('io.github.mapvina:android-sdk-turf:2.0.1')
     
     // MapVina Plugins
-    implementation('io.github.map-vina:android-plugin-annotation-v9:2.0.1')
+    implementation('io.github.mapvina:android-plugin-annotation-v9:2.0.1')
     
     // MapVina Navigation
-    implementation('io.github.map-vina:libandroid-navigation:2.0.2')
-    implementation('io.github.map-vina:libandroid-navigation-ui:2.0.2')
+    implementation('io.github.mapvina:libandroid-navigation:2.0.2')
+    implementation('io.github.mapvina:libandroid-navigation-ui:2.0.2')
     
     // Location Services
     implementation 'com.google.android.gms:play-services-location:21.0.1'
@@ -295,7 +295,7 @@ class MapActivity : AppCompatActivity(), PermissionsListener {
     private lateinit var navigationMapRoute: NavigationMapRoute
     
     // Configuration
-    private val styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public_key"
+    private val styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public_key"
     private val defaultLocation = LatLng(10.728073, 106.624054) // Ho Chi Minh City
     private val defaultZoom = 12.0
     
@@ -571,11 +571,11 @@ class CustomMapStyles {
     
     companion object {
         // Style URLs for different countries
-        const val STYLE_VN_STREETS = "https://maps.map-vina.com/styles/v1/streets.json?key=public_key"
-        const val STYLE_VN_SATELLITE = "https://maps.map-vina.com/styles/v1/satellite.json?key=public_key"
-        const val STYLE_VN_NIGHT = "https://maps.map-vina.com/styles/v1/night.json?key=public_key"
-        const val STYLE_SG_STREETS = "https://sg-maps.map-vina.com/styles/v1/streets.json?key=public_key"
-        const val STYLE_TH_STREETS = "https://th-maps.map-vina.com/styles/v1/streets.json?key=public_key"
+        const val STYLE_VN_STREETS = "https://maps.mapvina.com/styles/v1/streets.json?key=public_key"
+        const val STYLE_VN_SATELLITE = "https://maps.mapvina.com/styles/v1/satellite.json?key=public_key"
+        const val STYLE_VN_NIGHT = "https://maps.mapvina.com/styles/v1/night.json?key=public_key"
+        const val STYLE_SG_STREETS = "https://sg-maps.mapvina.com/styles/v1/streets.json?key=public_key"
+        const val STYLE_TH_STREETS = "https://th-maps.mapvina.com/styles/v1/streets.json?key=public_key"
     }
     
     fun switchMapStyle(style: String) {
@@ -660,11 +660,11 @@ class GeofencingExample {
 ```kotlin
 object ApiConstants {
     // Base URLs by region
-    const val BASE_URL_VN = "https://maps.map-vina.com/"
-    const val BASE_URL_SG = "https://sg-maps.map-vina.com/"
-    const val BASE_URL_TH = "https://th-maps.map-vina.com/"
-    const val BASE_URL_TW = "https://tw-maps.map-vina.com/"
-    const val BASE_URL_MY = "https://my-maps.map-vina.com/"
+    const val BASE_URL_VN = "https://maps.mapvina.com/"
+    const val BASE_URL_SG = "https://sg-maps.mapvina.com/"
+    const val BASE_URL_TH = "https://th-maps.mapvina.com/"
+    const val BASE_URL_TW = "https://tw-maps.mapvina.com/"
+    const val BASE_URL_MY = "https://my-maps.mapvina.com/"
     
     // API Endpoints
     const val GEOCODING_ENDPOINT = "api/v1/geocode"
@@ -1075,23 +1075,23 @@ fun addMultipleMarkers(points: List<LatLng>) {
 ## 📚 Tài liệu tham khảo
 
 ### Official Documentation
-- 🔗 [MapVina Android SDK](https://github.com/map-vina/mapvina-native)
-- 🔗 [MapVina Java](https://github.com/map-vina/mapvina-java)
-- 🔗 [MapVina Navigation Android](https://github.com/map-vina/mapvina-navigation-android)
+- 🔗 [MapVina Android SDK](https://github.com/mapvina/mapvina-native)
+- 🔗 [MapVina Java](https://github.com/mapvina/mapvina-java)
+- 🔗 [MapVina Navigation Android](https://github.com/mapvina/mapvina-navigation-android)
 - 🔗 [MapBox Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/)
 
 ### API Documentation
-- 📖 [Geocoding API](https://docs.map-vina.com/api/geocoding)
-- 📖 [Directions API](https://docs.map-vina.com/api/directions)
-- 📖 [Map Tiles API](https://docs.map-vina.com/api/maps)
+- 📖 [Geocoding API](https://docs.mapvina.com/api/geocoding)
+- 📖 [Directions API](https://docs.mapvina.com/api/directions)
+- 📖 [Map Tiles API](https://docs.mapvina.com/api/maps)
 
 ### Sample Projects
-- 💻 [MapVina Demo Android](https://github.com/map-vina/mapvina-demo-android)
-- 💻 [Navigation Examples](https://github.com/map-vina/navigation-examples)
+- 💻 [MapVina Demo Android](https://github.com/mapvina/mapvina-demo-android)
+- 💻 [Navigation Examples](https://github.com/mapvina/navigation-examples)
 
 ### Community Resources
 - 💬 [Stack Overflow - MapVina Tag](https://stackoverflow.com/questions/tagged/mapvina)
-- 💬 [GitHub Issues](https://github.com/map-vina/mapvina-native/issues)
+- 💬 [GitHub Issues](https://github.com/mapvina/mapvina-native/issues)
 - 💬 [Discord Community](https://discord.gg/mapvina)
 
 ---
@@ -1107,8 +1107,8 @@ MapVina SDK được phát hành dưới giấy phép BSD-3-Clause. Xem file [LI
 Nếu bạn gặp vấn đề hoặc cần hỗ trợ:
 
 - 📧 Email: support@mapvina.com
-- 🐛 Report bugs: [GitHub Issues](https://github.com/map-vina/mapvina-native/issues)
-- 💡 Feature requests: [GitHub Discussions](https://github.com/map-vina/mapvina-native/discussions)
+- 🐛 Report bugs: [GitHub Issues](https://github.com/mapvina/mapvina-native/issues)
+- 💡 Feature requests: [GitHub Discussions](https://github.com/mapvina/mapvina-native/discussions)
 
 ---
 

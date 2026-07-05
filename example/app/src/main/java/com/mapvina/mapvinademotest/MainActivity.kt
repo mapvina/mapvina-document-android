@@ -14,7 +14,7 @@ import com.mapvina.android.maps.MapVinaMap
 import com.mapvina.mapvinademotest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private var styleUrl = "https://maps.map-vina.com/styles/v1/streets.json?key=public_key"
+    private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public_key"
     private lateinit var mapvinaMap: MapVinaMap
     private lateinit var binding: ActivityMainBinding
 
