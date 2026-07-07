@@ -145,18 +145,14 @@ android {
 
 dependencies {
     // MapVina Core SDK
-    implementation('io.github.mapvina:android-sdk:2.0.2')
+    implementation('io.github.mapvina:android-sdk:1.0.0')
     
     // MapVina Data Models
-    implementation('io.github.mapvina:android-sdk-geojson:2.0.1')
-    implementation('io.github.mapvina:android-sdk-turf:2.0.1')
+    implementation('io.github.mapvina:android-sdk-geojson:1.0.0')
+    implementation('io.github.mapvina:android-sdk-turf:1.0.0')
     
     // MapVina Plugins
-    implementation('io.github.mapvina:android-plugin-annotation-v9:2.0.1')
-    
-    // MapVina Navigation
-    implementation('io.github.mapvina:libandroid-navigation:2.0.2')
-    implementation('io.github.mapvina:libandroid-navigation-ui:2.0.2')
+    implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0')
     
     // Location Services
     implementation 'com.google.android.gms:play-services-location:21.0.1'

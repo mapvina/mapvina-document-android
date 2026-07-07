@@ -11,8 +11,8 @@ material = "1.5.0"
 activity = "1.9.3"
 constraintlayout = "2.1.4"
 playServicesBasement = "18.4.0"
-mapvina = "1.0.20"
-androidSdk = "1.0.20"
+mapvina = "1.0.0"
+androidSdk = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
