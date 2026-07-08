@@ -1082,8 +1082,8 @@ fun addMultipleMarkers(points: List<LatLng>) {
 - 📖 [Map Tiles API](https://docs.mapvina.com/api/maps)
 
 ### Sample Projects
-- 💻 [MapVina Demo Android](https://github.com/mapvina/mapvina-demo-android)
-- 💻 [Navigation Examples](https://github.com/mapvina/navigation-examples)
+- 💻 [MapVina Demo Android (repo này)](https://github.com/mapvina/mapvina-document-android)
+- 💻 [MapVina Navigation Android](https://github.com/mapvina/mapvina-navigation-android)
 
 ### Community Resources
 - 💬 [Stack Overflow - MapVina Tag](https://stackoverflow.com/questions/tagged/mapvina)
