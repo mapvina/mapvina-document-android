@@ -54,7 +54,7 @@ class MapFeatureFragment : Fragment(), PermissionsListener, View.OnClickListener
     private val binding get() = _binding!!
     private var permissionsManager: PermissionsManager = PermissionsManager(this)
 
-    private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public"
+    private var styleUrl = "https://maps.mapvina.com/styles/v2/streets.json?key=public"
     private var latLngLocation: LatLng? = LatLng(10.728073, 106.624054)
     private var zoomLocation: Double = 10.0
     private var idCountry: String? = "vn"

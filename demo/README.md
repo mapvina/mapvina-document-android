@@ -82,7 +82,7 @@ import com.mapvina.android.navigation.ui.NavigationMapRoute
 
 ```kotlin
 private lateinit var mapvinaMap: MapVinaMap
-private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public_key"
+private var styleUrl = "https://maps.mapvina.com/styles/v2/streets.json?key=public_key"
 private lateinit var navigationMapRoute: NavigationMapRoute
 ```
 

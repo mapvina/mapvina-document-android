@@ -64,7 +64,7 @@ class MapSinglePointFragment : Fragment(), PermissionsListener {
     private var addressTo: Point? = null
     private var addressList: List<String>? = null
     private var addressListData: List<Feature>? = null
-    private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public"
+    private var styleUrl = "https://maps.mapvina.com/styles/v2/streets.json?key=public"
     private lateinit var sharedPreferences: SharedPreferences
     private var latLngLocation: LatLng? = LatLng(10.728073, 106.624054)
     private var zoomLocation: Double = 10.0

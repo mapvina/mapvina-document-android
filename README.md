@@ -291,7 +291,7 @@ class MapActivity : AppCompatActivity(), PermissionsListener {
     private lateinit var navigationMapRoute: NavigationMapRoute
     
     // Configuration
-    private val styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public_key"
+    private val styleUrl = "https://maps.mapvina.com/styles/v2/streets.json?key=public_key"
     private val defaultLocation = LatLng(10.728073, 106.624054) // Ho Chi Minh City
     private val defaultZoom = 12.0
     
@@ -567,11 +567,11 @@ class CustomMapStyles {
     
     companion object {
         // Style URLs for different countries
-        const val STYLE_VN_STREETS = "https://maps.mapvina.com/styles/v1/streets.json?key=public_key"
-        const val STYLE_VN_SATELLITE = "https://maps.mapvina.com/styles/v1/satellite.json?key=public_key"
-        const val STYLE_VN_NIGHT = "https://maps.mapvina.com/styles/v1/night.json?key=public_key"
-        const val STYLE_SG_STREETS = "https://sg-maps.mapvina.com/styles/v1/streets.json?key=public_key"
-        const val STYLE_TH_STREETS = "https://th-maps.mapvina.com/styles/v1/streets.json?key=public_key"
+        const val STYLE_VN_STREETS = "https://maps.mapvina.com/styles/v2/streets.json?key=public_key"
+        const val STYLE_VN_SATELLITE = "https://maps.mapvina.com/styles/v2/satellite.json?key=public_key"
+        const val STYLE_VN_NIGHT = "https://maps.mapvina.com/styles/v2/night.json?key=public_key"
+        const val STYLE_SG_STREETS = "https://sg-maps.mapvina.com/styles/v2/streets.json?key=public_key"
+        const val STYLE_TH_STREETS = "https://th-maps.mapvina.com/styles/v2/streets.json?key=public_key"
     }
     
     fun switchMapStyle(style: String) {

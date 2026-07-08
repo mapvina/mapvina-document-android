@@ -72,7 +72,7 @@ dependencies {
   <h2 id="init">5) Khởi tạo map trong Fragment/Activity</h2>
   <pre><code>// Kotlin (tối giản)
 private lateinit var mapvinaMap: com.mapvina.android.maps.MapVinaMap
-private var styleUrl = "https://maps.mapvina.com/styles/v1/streets.json?key=public"
+private var styleUrl = "https://maps.mapvina.com/styles/v2/streets.json?key=public"
 
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
   com.mapvina.android.MapVina.getInstance(requireActivity())
@@ -114,7 +114,7 @@ val update = com.mapvina.android.camera.CameraUpdateFactory.newLatLngZoom(
 mapvinaMap.animateCamera(update, 1000)
 
 // Đổi style runtime
-mapvinaMap.setStyle("https://maps.mapvina.com/styles/v1/night.json?key=public")
+mapvinaMap.setStyle("https://maps.mapvina.com/styles/v2/night.json?key=public")
 </code></pre>
 
   <h2 id="navigation">9) Routing & Navigation</h2>
