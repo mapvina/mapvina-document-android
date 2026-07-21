@@ -70,10 +70,14 @@ MapVina Maps SDK là một giải pháp bản đồ mạnh mẽ được thiết
 Minimum SDK: API 26 (Android 8.0)
 Target SDK: API 35 (Android 15)
 Compile SDK: 35
+NDK: 27.1.12297006
 Kotlin: 1.9.10
-Gradle: 8.4.2
-Gradle Wrapper: 8.6
+Android Gradle Plugin: 8.7.0
+Gradle Wrapper: 8.9
 ```
+
+> ✅ **Đã kiểm chứng bằng build/emulator** (xem mục "Kiểm chứng Build & Runtime"):
+> các giá trị trên khớp với dự án `demo/` thực tế.
 
 ### Supported ABIs:
 - `armeabi-v7a` (32-bit ARM)
@@ -91,24 +95,31 @@ buildscript {
     ext.kotlin_version = "1.9.10"
     repositories {
         google()
+        jcenter()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.4.2'
+        classpath 'com.android.tools.build:gradle:8.7.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.4.0'
+        classpath "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1"
     }
 }
 
 allprojects {
     repositories {
+        mavenLocal()   // ⚠️ Bắt buộc: xem mục "Kiểm chứng Build & Runtime" bên dưới
         google()
+        jcenter()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://api.mapbox.com/downloads/v2/releases/maven' }
     }
 }
 ```
+
+> ⚠️ **Vì sao cần `mavenLocal()`?** Artifact `io.github.mapvina:android-sdk-geojson:1.0.0`
+> được publish công khai lại đóng gói sai namespace (`com.mapvina.geojson.*`), trong khi
+> `android-sdk:1.0.1` được biên dịch để dùng `io.github.mapvina.geojson.*`. Bản geojson
+> đóng gói đúng namespace hiện chỉ tồn tại trong Maven local (`~/.m2`). Chi tiết ở cuối tài liệu.
 
 ### 2. Module `build.gradle`
 ```gradle
@@ -119,25 +130,25 @@ android {
         applicationId "com.mapvina.sample"
         minSdk 26
         targetSdk 35
-        versionCode 1
-        versionName "2.0.0"
-        
+        versionCode 10
+        versionName "1.0.7"
+        multiDexEnabled true
+
         // Cấu hình ABI filters
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
         }
     }
-    
+
     buildFeatures {
-        dataBinding true
         viewBinding true
     }
-    
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -145,19 +156,28 @@ android {
 
 dependencies {
     // MapVina Core SDK
-    implementation('io.github.mapvina:android-sdk:1.0.0')
-    
-    // MapVina Data Models
-    implementation('io.github.mapvina:android-sdk-geojson:1.0.0')
-    implementation('io.github.mapvina:android-sdk-turf:1.0.0')
-    
-    // MapVina Plugins
-    implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0')
-    
-    // Location Services
-    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'io.github.mapvina:android-sdk:1.0.1'
+
+    // MapVina GeoJSON (bắt buộc — demo dùng io.github.mapvina.geojson.*)
+    implementation 'io.github.mapvina:android-sdk-geojson:1.0.0'
+
+    // MapVina Plugins — loại bỏ artifact core cũ `android-sdk-opengl` bị trùng lớp
+    implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0') {
+        exclude group: 'io.github.mapvina', module: 'android-sdk-opengl'
+    }
 }
 ```
+
+> ℹ️ **Khác biệt so với tài liệu cũ (đã kiểm chứng trên `demo/`):**
+> - `versionName` thực tế là `1.0.7`, `versionCode` là `10` (không phải `2.0.0`).
+> - Core SDK là `android-sdk:1.0.1` (không phải `1.0.0`).
+> - `android-sdk-geojson:1.0.0` là **bắt buộc**; nếu thiếu, dự án **không biên dịch được**
+>   (lỗi `Unresolved reference: geojson`).
+> - `android-sdk-turf` không được import trực tiếp trong `demo/` (chỉ kéo theo gián tiếp),
+>   nên không cần khai báo tường minh.
+> - Cần `exclude ... android-sdk-opengl` để tránh lỗi trùng lớp (duplicate class).
+> - Dự án `example/` (tham khảo) dùng cấu hình khác: `android-sdk:1.0.0` + `geojson` + `turf`
+>   qua version catalog và repository JitPack/Sonatype — **không** phải cấu hình của `demo/`.
 
 ### 3. `gradle.properties`
 ```properties
@@ -171,58 +191,83 @@ org.gradle.caching=true
 ### 4. AndroidManifest.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    
-    <!-- Permissions -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <!-- Permissions (khớp với demo/) -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- (Tuỳ chọn) Nếu bật location component, tự thêm — demo hiện KHÔNG khai báo:
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
+
     <application
-        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        
-        <!-- Main Activity -->
+
+        <!-- Launcher Activity -->
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:screenOrientation="portrait">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <!-- MapVina Navigation Service -->
-        <service 
-            android:name="com.mapvina.navigation.android.navigation.v5.navigation.MapboxNavigationService"
-            android:exported="false" />
-            
+
+        <!-- MapVina Navigation Activity -->
+        <activity
+            android:name="com.mapvina.navigation.android.navigation.ui.v5.MapVinaNavigationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <!-- ⚠️ BẢO MẬT: Không hardcode Google Maps API key trong manifest.
+             Xem mục "Bảo mật khoá API" ở cuối tài liệu. -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
     </application>
 </manifest>
 ```
+
+> ℹ️ **Khác biệt so với tài liệu cũ (đã kiểm chứng trên manifest thực tế):**
+> - Không có `android:name=".MyApplication"` — demo **không** có custom Application class.
+> - Không có service `MapboxNavigationService`. Thay vào đó là **activity**
+>   `com.mapvina.navigation.android.navigation.ui.v5.MapVinaNavigationActivity`.
+> - Manifest thực tế **không** khai báo `ACCESS_FINE/COARSE_LOCATION` (dù hướng dẫn có mô tả
+>   location component). Nếu bạn dùng location, hãy tự thêm hai quyền này.
 
 ---
 
 ## 🚀 Tích hợp chi tiết
 
 ### 1. Khởi tạo MapVina
+
+Demo **không** dùng custom `Application` class. MapVina được khởi tạo ngay trong
+Fragment/Activity trước khi dùng `MapView`, kèm tên tile server:
+
 ```kotlin
-class MyApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-        // Khởi tạo MapVina với context
-        MapVina.getInstance(this)
-    }
-}
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.WellKnownTileServer
+
+// Ví dụ trong Fragment.onCreateView() của demo:
+MapVina.getInstance(requireActivity(), "public", WellKnownTileServer.MapVina)
 ```
 
 ### 2. Layout XML với MapView
@@ -235,7 +280,7 @@ class MyApplication : Application() {
     android:layout_height="match_parent">
     
     <!-- MapView với đầy đủ cấu hình -->
-    <com.mapvina.android.maps.MapView
+    <io.github.mapvina.android.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -282,16 +327,34 @@ class MyApplication : Application() {
 ```
 
 ### 3. Activity/Fragment Implementation
+
+> 🏛️ **Kiến trúc thực tế:** `demo/` là ứng dụng **fragment-based**. `MainActivity` (host
+> Navigation) + `MainViewModel` (state dùng chung) điều phối các màn hình dạng Fragment:
+> `MapSinglePointFragment`, `MapClusterFragment`, `MapMultiPointFragment`,
+> `MapWayPointFragment`, `MapDirectionPointFragment`, `MapAnimationFragment`,
+> `MapFeatureFragment`. **Không** tồn tại một `MapActivity` khối đơn như mô tả cũ.
+> Đoạn code dưới đây minh hoạ vòng đời/khởi tạo map (áp dụng tương tự trong một Fragment).
+
 ```kotlin
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.maps.MapView
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.location.permissions.PermissionsListener
+import io.github.mapvina.android.location.permissions.PermissionsManager
+
 class MapActivity : AppCompatActivity(), PermissionsListener {
-    
+
     private lateinit var mapView: MapView
     private lateinit var mapvinaMap: MapVinaMap
     private lateinit var permissionsManager: PermissionsManager
+    // Navigation (tuỳ chọn) — cần module com.mapvina.navigation.* nếu dùng chỉ đường
     private lateinit var navigationMapRoute: NavigationMapRoute
-    
-    // Configuration
-    private val styleUrl = "https://maps.mapvina.com/styles/v2/streets.json?key=public_key"
+
+    // Configuration — streets dùng ?key=public (đúng như demo)
+    private val styleUrl = "https://maps.mapvina.com/styles/v2/streets.json?key=public"
     private val defaultLocation = LatLng(10.728073, 106.624054) // Ho Chi Minh City
     private val defaultZoom = 12.0
     
@@ -566,12 +629,14 @@ class MarkerClustering {
 class CustomMapStyles {
     
     companion object {
-        // Style URLs for different countries
-        const val STYLE_VN_STREETS = "https://maps.mapvina.com/styles/v2/streets.json?key=public_key"
-        const val STYLE_VN_SATELLITE = "https://maps.mapvina.com/styles/v2/satellite.json?key=public_key"
+        // ⚠️ key theo từng endpoint (đã kiểm chứng trong demo/ Constants.kt):
+        //   - streets  -> ?key=public
+        //   - night/simple -> ?key=public_key
+        const val STYLE_VN_STREETS = "https://maps.mapvina.com/styles/v2/streets.json?key=public"
         const val STYLE_VN_NIGHT = "https://maps.mapvina.com/styles/v2/night.json?key=public_key"
-        const val STYLE_SG_STREETS = "https://sg-maps.mapvina.com/styles/v2/streets.json?key=public_key"
-        const val STYLE_TH_STREETS = "https://th-maps.mapvina.com/styles/v2/streets.json?key=public_key"
+        const val STYLE_VN_SIMPLE = "https://maps.mapvina.com/styles/v2/simple.json?key=public_key"
+        const val STYLE_SG_STREETS = "https://sg-maps.mapvina.com/styles/v2/streets.json?key=public"
+        const val STYLE_TH_STREETS = "https://th-maps.mapvina.com/styles/v2/streets.json?key=public"
     }
     
     fun switchMapStyle(style: String) {
@@ -1043,19 +1108,14 @@ fun addMultipleMarkers(points: List<LatLng>) {
 
 ### 2. **ProGuard Rules**
 ```proguard
-# MapVina
+# MapVina core SDK (namespace thực tế: io.github.mapvina.android.*)
+-keep class io.github.mapvina.** { *; }
+-keep interface io.github.mapvina.** { *; }
+-keep enum io.github.mapvina.** { *; }
+
+# GeoJSON + Navigation (một số module vẫn dùng namespace com.mapvina.*)
 -keep class com.mapvina.** { *; }
 -keep interface com.mapvina.** { *; }
--keep enum com.mapvina.** { *; }
-
-# GeoJSON
--keep class com.mapvina.geojson.** { *; }
-
-# Navigation
--keep class com.mapvina.navigation.** { *; }
-
-# Turf
--keep class com.mapvina.turf.** { *; }
 
 # OkHttp
 -dontwarn okhttp3.**
@@ -1108,6 +1168,58 @@ Nếu bạn gặp vấn đề hoặc cần hỗ trợ:
 
 ---
 
+## ✅ Kiểm chứng Build & Runtime
+
+Tài liệu này đã được đồng bộ với dự án `demo/` thực tế và **kiểm chứng bằng cách build +
+chạy trên emulator Android**.
+
+### Đã kiểm chứng bằng build (verified by build)
+- `demo/` biên dịch thành công `:app:assembleDebug` với **JDK 17**, **AGP 8.7.0**,
+  **Gradle wrapper 8.9**, **compileSdk 35**, **NDK 27.1.12297006**.
+- Các giá trị `versionName 1.0.7` / `versionCode 10`, dependency `android-sdk:1.0.1`,
+  namespace `io.github.mapvina.android.*` + `io.github.mapvina.geojson.*`, và manifest
+  (launcher `.MainActivity`, activity `MapVinaNavigationActivity`, không có
+  `MyApplication`/`MapboxNavigationService`) đều khớp với mã nguồn thực tế.
+
+### Đã kiểm chứng bằng runtime (verified on emulator)
+- Cài APK lên emulator (AVD android-35), mở app → `MainActivity` hiển thị.
+- Native lib `libmapvina.so` nạp thành công; log xác nhận nạp style:
+  `https://maps.mapvina.com/styles/v2/streets.json?key=public`.
+- Ảnh chụp màn hình xác nhận **style "streets" của MapVina render đúng** (nền đất be
+  `rgb(244,244,232)`, nước/đường màu xanh) — xem `demo/emulator_map_verification.png`.
+
+### ⚠️ Vấn đề hạ tầng SDK cần lưu ý (không phải lỗi tài liệu)
+Dự án `demo/` như đang commit **không build được ngay** vì SDK publish công khai không
+nhất quán. Để build/chạy được, `demo/app/build.gradle` cần 3 điều chỉnh (đã áp dụng):
+1. Bổ sung `io.github.mapvina:android-sdk-geojson:1.0.0` (mã nguồn dùng nhưng chưa khai báo).
+2. Thêm `mavenLocal()` — artifact geojson publish công khai đóng gói sai namespace
+   (`com.mapvina.geojson.*`), trong khi `android-sdk:1.0.1` cần `io.github.mapvina.geojson.*`;
+   bản đúng namespace hiện chỉ có trong `~/.m2`.
+3. `exclude ... android-sdk-opengl` khỏi `android-plugin-annotation-v9` để tránh trùng lớp.
+
+> 👉 **Khuyến nghị dài hạn:** publish lại `android-sdk-geojson`/`android-sdk-turf` đúng
+> namespace `io.github.mapvina.geojson.*` và gỡ artifact core cũ `android-sdk-opengl`,
+> để người dùng không phải phụ thuộc vào `mavenLocal()`.
+
+### Chưa kiểm chứng trong môi trường này (documented, not runtime-verified)
+- Điều hướng turn-by-turn, geocoding/autocomplete/directions API, và các style
+  `night/satellite` phụ thuộc mạng + khoá hợp lệ; chỉ được mô tả theo mã nguồn, chưa chạy thực tế.
+
+---
+
+## 🔐 Bảo mật khoá API
+
+Manifest của `demo/` hiện **hardcode một Google Maps API key** trong thẻ `meta-data`.
+Đây là rủi ro lộ khoá.
+
+- **Xoay (rotate) khoá** đã commit và gỡ khỏi lịch sử version control.
+- Cấp khoá qua cơ chế **không commit**: đặt trong `local.properties` (đã có sẵn
+  `secrets-gradle-plugin` trong dự án) rồi tham chiếu bằng placeholder trong manifest,
+  ví dụ `android:value="${MAPS_API_KEY}"`.
+- **Không** in giá trị khoá thật trong tài liệu hay commit.
+
+---
+
 **Made with ❤️ by MapVina Team**
 
-*Last updated: November 2024*
+*Last updated: 2026-07 — đồng bộ với `demo/` và kiểm chứng bằng build + emulator*
