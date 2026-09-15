@@ -118,7 +118,7 @@ allprojects {
 
 > ⚠️ **Vì sao cần `mavenLocal()`?** Artifact `io.github.mapvina:android-sdk-geojson:1.0.0`
 > được publish công khai lại đóng gói sai namespace (`com.mapvina.geojson.*`), trong khi
-> `android-sdk:1.0.1` được biên dịch để dùng `io.github.mapvina.geojson.*`. Bản geojson
+> `android-sdk:1.0.2` được biên dịch để dùng `io.github.mapvina.geojson.*`. Bản geojson
 > đóng gói đúng namespace hiện chỉ tồn tại trong Maven local (`~/.m2`). Chi tiết ở cuối tài liệu.
 
 ### 2. Module `build.gradle`
@@ -156,7 +156,7 @@ android {
 
 dependencies {
     // MapVina Core SDK
-    implementation 'io.github.mapvina:android-sdk:1.0.1'
+    implementation 'io.github.mapvina:android-sdk:1.0.2'
 
     // MapVina GeoJSON (bắt buộc — demo dùng io.github.mapvina.geojson.*)
     implementation 'io.github.mapvina:android-sdk-geojson:1.0.0'
@@ -170,13 +170,13 @@ dependencies {
 
 > ℹ️ **Khác biệt so với tài liệu cũ (đã kiểm chứng trên `demo/`):**
 > - `versionName` thực tế là `1.0.7`, `versionCode` là `10` (không phải `2.0.0`).
-> - Core SDK là `android-sdk:1.0.1` (không phải `1.0.0`).
+> - Core SDK là `android-sdk:1.0.2` (không phải `1.0.0`).
 > - `android-sdk-geojson:1.0.0` là **bắt buộc**; nếu thiếu, dự án **không biên dịch được**
 >   (lỗi `Unresolved reference: geojson`).
 > - `android-sdk-turf` không được import trực tiếp trong `demo/` (chỉ kéo theo gián tiếp),
 >   nên không cần khai báo tường minh.
 > - Cần `exclude ... android-sdk-opengl` để tránh lỗi trùng lớp (duplicate class).
-> - Dự án `example/` (tham khảo) dùng cấu hình khác: `android-sdk:1.0.0` + `geojson` + `turf`
+> - Dự án `example/` (tham khảo) dùng cấu hình khác: `android-sdk:1.0.2` + `geojson` + `turf`
 >   qua version catalog và repository JitPack/Sonatype — **không** phải cấu hình của `demo/`.
 
 ### 3. `gradle.properties`
@@ -1176,7 +1176,7 @@ chạy trên emulator Android**.
 ### Đã kiểm chứng bằng build (verified by build)
 - `demo/` biên dịch thành công `:app:assembleDebug` với **JDK 17**, **AGP 8.7.0**,
   **Gradle wrapper 8.9**, **compileSdk 35**, **NDK 27.1.12297006**.
-- Các giá trị `versionName 1.0.7` / `versionCode 10`, dependency `android-sdk:1.0.1`,
+- Các giá trị `versionName 1.0.7` / `versionCode 10`, dependency `android-sdk:1.0.2`,
   namespace `io.github.mapvina.android.*` + `io.github.mapvina.geojson.*`, và manifest
   (launcher `.MainActivity`, activity `MapVinaNavigationActivity`, không có
   `MyApplication`/`MapboxNavigationService`) đều khớp với mã nguồn thực tế.
@@ -1193,7 +1193,7 @@ Dự án `demo/` như đang commit **không build được ngay** vì SDK publis
 nhất quán. Để build/chạy được, `demo/app/build.gradle` cần 3 điều chỉnh (đã áp dụng):
 1. Bổ sung `io.github.mapvina:android-sdk-geojson:1.0.0` (mã nguồn dùng nhưng chưa khai báo).
 2. Thêm `mavenLocal()` — artifact geojson publish công khai đóng gói sai namespace
-   (`com.mapvina.geojson.*`), trong khi `android-sdk:1.0.1` cần `io.github.mapvina.geojson.*`;
+   (`com.mapvina.geojson.*`), trong khi `android-sdk:1.0.2` cần `io.github.mapvina.geojson.*`;
    bản đúng namespace hiện chỉ có trong `~/.m2`.
 3. `exclude ... android-sdk-opengl` khỏi `android-plugin-annotation-v9` để tránh trùng lớp.
 

@@ -49,7 +49,7 @@ Thêm dependencies cho MapVina SDK (khớp với `demo/app/build.gradle` thực 
 
 ```gradle
 dependencies {
-    implementation 'io.github.mapvina:android-sdk:1.0.1'
+    implementation 'io.github.mapvina:android-sdk:1.0.2'
     implementation 'io.github.mapvina:android-sdk-geojson:1.0.0' // bắt buộc, nếu thiếu sẽ lỗi biên dịch
     implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0') {
         exclude group: 'io.github.mapvina', module: 'android-sdk-opengl' // tránh trùng lớp
@@ -58,7 +58,7 @@ dependencies {
 ```
 
 > ⚠️ **Lưu ý đóng gói SDK:** artifact `android-sdk-geojson:1.0.0` publish công khai đóng gói
-> sai namespace (`com.mapvina.geojson.*`), trong khi `android-sdk:1.0.1` cần
+> sai namespace (`com.mapvina.geojson.*`), trong khi `android-sdk:1.0.2` cần
 > `io.github.mapvina.geojson.*`. Bản đúng chỉ có trong Maven local, nên cần `mavenLocal()`.
 > `android-sdk-turf` không cần khai báo tường minh (chỉ dùng gián tiếp).
 
