@@ -41,8 +41,8 @@ android {
 
 dependencies {
     implementation("io.github.mapvina:android-sdk:1.0.2")
-    implementation("io.github.mapvina:android-sdk-geojson:1.0.0")
-    implementation("io.github.mapvina:android-sdk-turf:1.0.0")
+    implementation("io.github.mapvina:android-sdk-geojson:1.0.1")
+    implementation("io.github.mapvina:android-sdk-turf:1.0.1")
     implementation("io.github.mapvina:android-plugin-annotation-v9:1.0.0")
 
     implementation(libs.androidx.core.ktx)

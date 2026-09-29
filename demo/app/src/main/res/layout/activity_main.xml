@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/colorWhite">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -38,8 +39,7 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_marginStart="12dp"
-                        android:src="@drawable/ic_navigation_24"
-                        android:tint="@android:color/white"
+                        android:src="@drawable/mapvina_logo_helmet"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

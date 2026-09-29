@@ -1,5 +1,9 @@
 # 📍 MapVina Maps Android SDK V2- Hướng dẫn Tích hợp Chi tiết
 
+> **Kiểm chứng artifact/sample 27/09/2026:** xem
+> [SDK_RELEASE_AUDIT_2026-09-27.md](SDK_RELEASE_AUDIT_2026-09-27.md) trước
+> khi chọn phiên bản cho Android, iOS, Flutter hoặc React Native.
+
 ## 📋 Mục lục
 1. [Giới thiệu](#giới-thiệu)
 2. [Tính năng chính](#tính-năng-chính)
@@ -108,7 +112,6 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()   // ⚠️ Bắt buộc: xem mục "Kiểm chứng Build & Runtime" bên dưới
         google()
         jcenter()
         mavenCentral()
@@ -116,10 +119,8 @@ allprojects {
 }
 ```
 
-> ⚠️ **Vì sao cần `mavenLocal()`?** Artifact `io.github.mapvina:android-sdk-geojson:1.0.0`
-> được publish công khai lại đóng gói sai namespace (`com.mapvina.geojson.*`), trong khi
-> `android-sdk:1.0.2` được biên dịch để dùng `io.github.mapvina.geojson.*`. Bản geojson
-> đóng gói đúng namespace hiện chỉ tồn tại trong Maven local (`~/.m2`). Chi tiết ở cuối tài liệu.
+> `android-sdk-geojson:1.0.1` và `android-sdk-turf:1.0.1` đã có trên Maven Central
+> với namespace `io.github.mapvina.*`. Không cần `mavenLocal()` để tích hợp SDK.
 
 ### 2. Module `build.gradle`
 ```gradle
@@ -159,7 +160,7 @@ dependencies {
     implementation 'io.github.mapvina:android-sdk:1.0.2'
 
     // MapVina GeoJSON (bắt buộc — demo dùng io.github.mapvina.geojson.*)
-    implementation 'io.github.mapvina:android-sdk-geojson:1.0.0'
+    implementation 'io.github.mapvina:android-sdk-geojson:1.0.1'
 
     // MapVina Plugins — loại bỏ artifact core cũ `android-sdk-opengl` bị trùng lớp
     implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0') {
@@ -171,12 +172,11 @@ dependencies {
 > ℹ️ **Khác biệt so với tài liệu cũ (đã kiểm chứng trên `demo/`):**
 > - `versionName` thực tế là `1.0.7`, `versionCode` là `10` (không phải `2.0.0`).
 > - Core SDK là `android-sdk:1.0.2` (không phải `1.0.0`).
-> - `android-sdk-geojson:1.0.0` là **bắt buộc**; nếu thiếu, dự án **không biên dịch được**
->   (lỗi `Unresolved reference: geojson`).
+> - `android-sdk-geojson:1.0.1` được core kéo theo; demo khai báo trực tiếp vì dùng API GeoJSON.
 > - `android-sdk-turf` không được import trực tiếp trong `demo/` (chỉ kéo theo gián tiếp),
 >   nên không cần khai báo tường minh.
 > - Cần `exclude ... android-sdk-opengl` để tránh lỗi trùng lớp (duplicate class).
-> - Dự án `example/` (tham khảo) dùng cấu hình khác: `android-sdk:1.0.2` + `geojson` + `turf`
+> - Dự án `example/` (tham khảo) dùng cấu hình khác: `android-sdk:1.0.2` + `geojson:1.0.1` + `turf:1.0.1`
 >   qua version catalog và repository JitPack/Sonatype — **không** phải cấu hình của `demo/`.
 
 ### 3. `gradle.properties`
@@ -1188,18 +1188,14 @@ chạy trên emulator Android**.
 - Ảnh chụp màn hình xác nhận **style "streets" của MapVina render đúng** (nền đất be
   `rgb(244,244,232)`, nước/đường màu xanh) — xem `demo/emulator_map_verification.png`.
 
-### ⚠️ Vấn đề hạ tầng SDK cần lưu ý (không phải lỗi tài liệu)
-Dự án `demo/` như đang commit **không build được ngay** vì SDK publish công khai không
-nhất quán. Để build/chạy được, `demo/app/build.gradle` cần 3 điều chỉnh (đã áp dụng):
-1. Bổ sung `io.github.mapvina:android-sdk-geojson:1.0.0` (mã nguồn dùng nhưng chưa khai báo).
-2. Thêm `mavenLocal()` — artifact geojson publish công khai đóng gói sai namespace
-   (`com.mapvina.geojson.*`), trong khi `android-sdk:1.0.2` cần `io.github.mapvina.geojson.*`;
-   bản đúng namespace hiện chỉ có trong `~/.m2`.
-3. `exclude ... android-sdk-opengl` khỏi `android-plugin-annotation-v9` để tránh trùng lớp.
-
-> 👉 **Khuyến nghị dài hạn:** publish lại `android-sdk-geojson`/`android-sdk-turf` đúng
-> namespace `io.github.mapvina.geojson.*` và gỡ artifact core cũ `android-sdk-opengl`,
-> để người dùng không phải phụ thuộc vào `mavenLocal()`.
+### Phiên bản artifact công khai (kiểm tra ngày 27/09/2026)
+- Maven Central: core `android-sdk` và năm biến thể debug/OpenGL/Vulkan đều `1.0.2`;
+  `android-sdk-geojson`, `android-sdk-turf`, `mapvina-android-gestures` đều `1.0.1`;
+  plugin annotation vẫn `1.0.0`.
+- GeoJSON/Turf `1.0.1` chứa class `io.github.mapvina.geojson.*` và
+  `io.github.mapvina.turf.*` trong JAR công khai; không cần bản cài ở Maven local.
+- Giữ `exclude ... android-sdk-opengl` ở plugin annotation để tránh kéo thêm core
+  khác biến thể (POM plugin `1.0.0` vẫn tham chiếu core cũ).
 
 ### Chưa kiểm chứng trong môi trường này (documented, not runtime-verified)
 - Điều hướng turn-by-turn, geocoding/autocomplete/directions API, và các style

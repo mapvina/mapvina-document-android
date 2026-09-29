@@ -4,7 +4,11 @@
 
 > ✅ Hướng dẫn này đã được đồng bộ với dự án `demo/` và kiểm chứng bằng build + emulator.
 > Xem mục "Kiểm chứng Build & Runtime" trong `../README.md` để biết chi tiết và các lưu ý
-> về đóng gói SDK (bắt buộc `mavenLocal()` + dependency `android-sdk-geojson`).
+> về phiên bản SDK công khai và dependency `android-sdk-geojson`.
+
+Ảnh [Pixel 9 API 35 ngày 29/09/2026](emulator_logo_20260929.png): streets
+hiển thị cùng logo ngang MapVina ở bottom-start (nền trong suốt) và biểu
+tượng Brand Kit trên header; build từ Maven Central `android-sdk:1.0.2`.
 
 ## 1. Cấu hình Gradle
 
@@ -29,7 +33,6 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()   // ⚠️ Bắt buộc — xem lưu ý ở dưới
         google()
         jcenter()
         mavenCentral()
@@ -50,17 +53,16 @@ Thêm dependencies cho MapVina SDK (khớp với `demo/app/build.gradle` thực 
 ```gradle
 dependencies {
     implementation 'io.github.mapvina:android-sdk:1.0.2'
-    implementation 'io.github.mapvina:android-sdk-geojson:1.0.0' // bắt buộc, nếu thiếu sẽ lỗi biên dịch
+    implementation 'io.github.mapvina:android-sdk-geojson:1.0.1' // demo dùng API GeoJSON trực tiếp
     implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0') {
         exclude group: 'io.github.mapvina', module: 'android-sdk-opengl' // tránh trùng lớp
     }
 }
 ```
 
-> ⚠️ **Lưu ý đóng gói SDK:** artifact `android-sdk-geojson:1.0.0` publish công khai đóng gói
-> sai namespace (`com.mapvina.geojson.*`), trong khi `android-sdk:1.0.2` cần
-> `io.github.mapvina.geojson.*`. Bản đúng chỉ có trong Maven local, nên cần `mavenLocal()`.
-> `android-sdk-turf` không cần khai báo tường minh (chỉ dùng gián tiếp).
+> GeoJSON/Turf `1.0.1` đã có namespace `io.github.mapvina.*` trên Maven Central.
+> `android-sdk:1.0.2` tự kéo chúng theo POM; demo khai báo GeoJSON trực tiếp vì dùng API.
+> Không cần `mavenLocal()`. `android-sdk-turf` không cần khai báo tường minh.
 
 ## 2. Triển khai `MapView` trong XML
 Thêm `MapView` vào file layout XML:
