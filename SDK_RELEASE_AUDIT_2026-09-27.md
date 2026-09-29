@@ -81,6 +81,10 @@ build với Maven Central trước Maven local, tránh cache che giấu lỗi. C
   Ảnh lưu tại
   [`../mapvina-document-ios-github/demo/simulator_logo_local_20260929.png`](../mapvina-document-ios-github/demo/simulator_logo_local_20260929.png).
   Đây **không phải** bản iOS công khai; sample mặc định vẫn ghim SPM `1.0.0`.
+- `ios-ci` xanh trên đúng commit native `5ed6153406b1ad33c0cdcaab8b3c8ee04d335738`, nhưng
+  workflow release hiện stage GitHub release bằng `prerelease: true` thay vì
+  `draft: true`; nếu CocoaPods/SPM lỗi, binary mới sẽ lộ công khai khi hai kênh
+  chưa hoàn tất. Chưa dispatch workflow iOS `1.0.1` vì gate này chưa an toàn.
 - Flutter `1.0.1` vẫn lỗi API key tại runtime; RN npm `1.0.2` còn lỗi compile
   namespace plugin; Android Auto còn xung đột Kotlin metadata. Chưa công bố
   các integration này là đã chạy được chỉ vì core Android có logo đúng.
