@@ -185,3 +185,5 @@ See the [final build gate log](evidence/push-build-gates.log). Documentation-onl
 library PRs do not rerun every SDK's source test suite or fix baseline CI failures.
 
 [Verified release/tag commit identities](evidence/release-provenance.json). Tag association is not a full reproducible-build attestation.
+
+[Repository → audit commit → PR → result handover](DELIVERY.md). No main merge or SDK publication in this audit.
