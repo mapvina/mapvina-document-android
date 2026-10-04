@@ -1,0 +1,49 @@
+Raw log SHA-256: dbf5c237a059d9321794e7cd78754893bef15af9b250e5f51fecf238187db900
+Excerpt only; full log retained outside Git. No fatal crash marker in this capture.
+
+10-04 17:31:02.726   572  1934 I ActivityManager: Force stopping com.mapvina.sample appid=10210 user=0: from pid 5876
+10-04 17:31:02.730   572  1934 I ActivityManager: Killing 5568:com.mapvina.sample/u0a210 (adj 0): stop com.mapvina.sample due to from pid 5876
+10-04 17:31:02.736   572  1934 W ActivityTaskManager: Force removing ActivityRecord{574f9c6 u0 com.mapvina.sample/.MainActivity t42 f}}: app died, no saved state
+10-04 17:31:02.747   830   870 V WindowManagerShell: Transition requested (#34): android.os.BinderProxy@6c53474 TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=42 displayId=0 isRunning=false baseIntent=Intent { flg=0x10000000 cmp=com.mapvina.sample/.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.mapvina.sample/com.mapvina.sample.MainActivity} numActivities=0 lastActiveTime=1582703 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@daadd9d} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 34 }
+10-04 17:31:02.758   572   619 E AppOps  : Operation not started: uid=10210 pkg=com.mapvina.sample(null) op=MONITOR_LOCATION
+10-04 17:31:02.787   572  1934 D ActivityManager: sync unfroze 5094 com.mapvina.mapvinademotest for 12
+10-04 17:31:02.794   572  1934 I AppsFilter: interaction: PackageSetting{a4bf694 com.mapvina.mapvinademotest/10208} -> PackageSetting{7904256 com.mapvina.sample/10210} BLOCKED
+10-04 17:31:02.794   572  1934 I AppsFilter: interaction: PackageSetting{1f1453d io.github.mapvina.android.testapp/10209} -> PackageSetting{7904256 com.mapvina.sample/10210} BLOCKED
+10-04 17:31:02.794   572  1934 I AppsFilter: interaction: PackageSetting{1014132 com.sangnguyensunny.MapVinaexpoapp/10207} -> PackageSetting{7904256 com.mapvina.sample/10210} BLOCKED
+10-04 17:31:02.794   572  1934 I AppsFilter: interaction: PackageSetting{e122e83 com.trackasia.live/10211} -> PackageSetting{7904256 com.mapvina.sample/10210} BLOCKED
+10-04 17:31:02.803   572   772 I AppWidgetServiceImpl: Updating package stopped masked state for uid 10210 package com.mapvina.sample isStopped true
+10-04 17:31:02.804   981   981 D CarrierSvcBindHelper: onHandleForceStop: [com.mapvina.sample]
+10-04 17:31:02.816  1310  1310 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=40, baseIntent=Intent { flg=0x10000000 cmp=com.mapvina.mapvinademotest/.MainActivity }
+10-04 17:31:02.818   572   908 I WindowManager: WIN DEATH: Window{66d8902 u0 com.mapvina.sample/com.mapvina.sample.MainActivity}
+10-04 17:31:02.819   572  1849 I ImeTracker: com.mapvina.sample:d949671b: onRequestHide at ORIGIN_SERVER reason HIDE_REMOVE_CLIENT fromUser false
+10-04 17:31:02.819   572   908 W InputManager-JNI: Input channel object '66d8902 com.mapvina.sample/com.mapvina.sample.MainActivity (client)' was disposed without first being removed with the input manager!
+10-04 17:31:02.819   572  1849 I ImeTracker: com.mapvina.sample:d949671b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-04 17:31:02.819   572  1507 V ActivityManager: Got obituary of 5568:com.mapvina.sample
+10-04 17:31:02.860   572   623 W ActivityTaskManager: Unable to send transaction to client proc com.mapvina.sample: no app thread
+10-04 17:31:02.874   572  1932 V SplashScreenExceptionList: SplashScreen checking exception for package com.mapvina.sample (target sdk:35) -> false
+10-04 17:31:02.874   572  1932 I ActivityTaskManager: Add Task{c0cdd87 #42 type=standard A=10210:com.mapvina.sample} to hidden list because adding Task{f9d96de #43 type=standard A=10210:com.mapvina.sample}
+10-04 17:31:02.875   572  1932 I ActivityTaskManager: START u0 {flg=0x10000000 cmp=com.mapvina.sample/.MainActivity} with LAUNCH_MULTIPLE from uid 2000 (BAL_ALLOW_PERMISSION) result code=0
+10-04 17:31:02.886  1310  1310 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=43, baseIntent=Intent { flg=0x10000000 cmp=com.mapvina.sample/.MainActivity }
+10-04 17:31:02.913   572   631 I ActivityManager: Start proc 5927:com.mapvina.sample/u0a210 for next-top-activity {com.mapvina.sample/com.mapvina.sample.MainActivity}
+10-04 17:31:02.920  5927  5927 I .mapvina.sample: Late-enabling -Xcheck:jni
+10-04 17:31:02.925   572  1932 D CoreBackPreview: Window{1744c78 u0 Splash Screen com.mapvina.sample}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@67fa3b6, mPriority=0, mIsAnimationCallback=false}
+10-04 17:31:02.981  5927  5927 I .mapvina.sample: Using CollectorTypeCMC GC.
+10-04 17:31:02.997   572  1858 I AppsFilter: interaction: PackageSetting{a4bf694 com.mapvina.mapvinademotest/10208} -> PackageSetting{cfe58b7 com.mapvina.sample/10210} BLOCKED
+10-04 17:31:02.997   572  1858 I AppsFilter: interaction: PackageSetting{1f1453d io.github.mapvina.android.testapp/10209} -> PackageSetting{cfe58b7 com.mapvina.sample/10210} BLOCKED
+10-04 17:31:02.997   572  1858 I AppsFilter: interaction: PackageSetting{1014132 com.sangnguyensunny.MapVinaexpoapp/10207} -> PackageSetting{cfe58b7 com.mapvina.sample/10210} BLOCKED
+10-04 17:31:02.997   572  1858 I AppsFilter: interaction: PackageSetting{e122e83 com.trackasia.live/10211} -> PackageSetting{cfe58b7 com.mapvina.sample/10210} BLOCKED
+10-04 17:31:03.001   572   772 I AppWidgetServiceImpl: Updating package stopped masked state for uid 10210 package com.mapvina.sample isStopped false
+10-04 17:31:03.050  5927  5927 W ziparchive: Unable to open '/data/app/~~4Wh9CSQv1nMQ7uyu-6v-Nw==/com.mapvina.sample-Iervi5DuTlCv_WXyG7MGgg==/base.dm': No such file or directory
+10-04 17:31:03.050  5927  5927 W ziparchive: Unable to open '/data/app/~~4Wh9CSQv1nMQ7uyu-6v-Nw==/com.mapvina.sample-Iervi5DuTlCv_WXyG7MGgg==/base.dm': No such file or directory
+10-04 17:31:03.230  5094  5175 D Mbgl-HttpRequest: [HTTP] This request was cancelled (https://maps.mapvina.com/mapstyle/font/DIN%20Pro%20Italic%2cArial%20Unicode%20MS%20Regular/0-255.pbf?key=REDACTED). This is expected for tiles that were being prefetched but are no longer needed for the map to render.
+... final output ...
+10-04 17:31:22.145  5927  5965 I MESA    : exportSyncFdForQSRILocked: got fd: 5
+10-04 17:31:22.160  5927  5965 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e0a48d0 hos timage handle 0x7001000000e2b
+10-04 17:31:22.161  5927  5965 I MESA    : exportSyncFdForQSRILocked: got fd: 189
+10-04 17:31:22.174  5927  5965 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e0a43d0 hos timage handle 0x7000500000bd7
+10-04 17:31:22.174  5927  5965 I MESA    : exportSyncFdForQSRILocked: got fd: 182
+10-04 17:31:22.208  5927  5965 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e0a5890 hos timage handle 0x7000800000e82
+10-04 17:31:22.208  5927  5965 I MESA    : exportSyncFdForQSRILocked: got fd: 176
+10-04 17:31:22.232   172   172 I logd    : logdr: UID=2000 GID=2000 PID=6027 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+10-04 17:31:22.240  5927  5965 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e0a4ed0 hos timage handle 0x7000600000e54
+10-04 17:31:22.240  5927  5965 I MESA    : exportSyncFdForQSRILocked: got fd: 181

@@ -1,0 +1,49 @@
+Raw log SHA-256: 49dae7c9f8808d2b6b6f537849cdc3dc5b0946ce4f9e367636f0bff54a2e65c7
+Excerpt only; full log retained outside Git. No fatal crash marker in this capture.
+
+10-04 17:11:59.404  1340  1340 I SystemSubtypesReportModule: SystemSubtypesReportModule$3.onCurrentInputMethodEntryChanged():136 entry: en-US, source: UNSPECIFIED
+10-04 17:11:59.404  1340  1340 W NotificationCenter: NotificationCenter$ListenerData.notifyOnExecutor():672 Heavy notify work detected on UI thread: |lor->mpx| takes 24ms
+10-04 17:11:59.404  1340  1340 I DeviceModeMonitor2: DeviceModeMonitor2.onConfigurationChanged():62
+10-04 17:11:59.404  1340  1340 I DeviceModeMonitor2: DeviceModeMonitor2.calculateAndNotify():101 Device mode 'phone' from display metrics 'DisplayMetrics{density=0.0, width=2424, height=1080, scaledDensity=0.0, xdpi=420.0, ydpi=420.0}' or smallestScreenWidthDp: 411
+10-04 17:11:59.404  1340  1340 I GoogleInputMethodService: GoogleInputMethodService.onConfigurationChanged():1665 changedMask : 20000480
+10-04 17:11:59.404  1340  1340 I GoogleInputMethodService: GoogleInputMethodService.clearInputMethodServiceData():1613 clearInputMethodServiceData for configurationChange
+10-04 17:11:59.420  1340  1340 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.mapvina.sample, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, true)
+10-04 17:11:59.422   572  1934 W PackageConfigPersister: App-specific configuration not found for packageName: com.mapvina.sample and userId: 0
+10-04 17:11:59.480   572  1507 D CoreBackPreview: Window{83e7a2b u0 com.mapvina.sample/com.mapvina.sample.MainActivity}: Setting back callback null
+10-04 17:11:59.482   572  3291 W InputManager-JNI: Input channel object '83e7a2b com.mapvina.sample/com.mapvina.sample.MainActivity (client)' was disposed without first being removed with the input manager!
+10-04 17:11:59.683   572  1507 D CoreBackPreview: Window{951b490 u0 com.mapvina.sample/com.mapvina.sample.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@1dc58e, mPriority=0, mIsAnimationCallback=false}
+10-04 17:11:59.768   572   869 I WindowManager: finishDrawing of relaunch: Window{951b490 u0 com.mapvina.sample/com.mapvina.sample.MainActivity} 452ms
+10-04 17:11:59.785  4571  4571 D DOMAIN URL STYLE:: https://maps.mapvina.com/styles/v2/streets.json?key=REDACTED
+10-04 17:11:59.800   572   619 V WindowManager:         {WCT{RemoteToken{ef304f9 Task{f881e65 #39 type=standard A=10210:com.mapvina.sample}}} m=CHANGE f=NONE p=WCT{RemoteToken{7f933 DefaultTaskDisplayArea@18506752}} leash=Surface(name=Task=39)/@0xb0deda7 sb=Rect(0, 0 - 2424, 1080) eb=Rect(0, 0 - 1080, 2424) d=0 r=1->0:0 taskParent=-1},
+10-04 17:11:59.986  4571  4618 D Mbgl-HttpRequest: [HTTP] This request was cancelled (https://maps.mapvina.com/styles/v2/streets.json?key=REDACTED). This is expected for tiles that were being prefetched but are no longer needed for the map to render.
+10-04 17:12:00.120  4571  4592 I .mapvina.sample: Background concurrent mark compact GC freed 3709KB AllocSpace bytes, 36(1680KB) LOS objects, 49% free, 8154KB/15MB, paused 5.633ms,11.581ms total 161.006ms
+10-04 17:12:00.121   572   707 I ImeTracker: com.mapvina.sample:f2d635a9: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-04 17:12:00.122   572   707 I ImeTracker: com.mapvina.sample:f2d635a9: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-04 17:12:00.202  1340  1340 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1986 onStartInput(EditorInfo{EditorInfo{packageName=com.mapvina.sample, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-04 17:12:00.203   572  3291 W PackageConfigPersister: App-specific configuration not found for packageName: com.mapvina.sample and userId: 0
+10-04 17:12:00.292  4571  4618 D Mbgl-HttpRequest: [HTTP] This request was cancelled (https://maps.mapvina.com/tiles/v2/composite.json?key=REDACTED). This is expected for tiles that were being prefetched but are no longer needed for the map to render.
+10-04 17:12:00.624   572   654 V BackupManagerService: [UserID:0] restoreAtInstall pkg=com.mapvina.mapvinademotest token=3 restoreSet=0
+10-04 17:12:00.658  4571  4618 D Mbgl-HttpRequest: [HTTP] This request was cancelled (https://tiles.mapvina.com/tiles/v2/10/162/391.pbf?key=REDACTED). This is expected for tiles that were being prefetched but are no longer needed for the map to render.
+10-04 17:12:00.677  4571  4618 D Mbgl-HttpRequest: [HTTP] This request was cancelled (https://tiles.mapvina.com/tiles/v2/10/161/389.pbf?key=REDACTED). This is expected for tiles that were being prefetched but are no longer needed for the map to render.
+10-04 17:12:00.679  4571  4618 D Mbgl-HttpRequest: [HTTP] This request was cancelled (https://tiles.mapvina.com/tiles/v2/10/161/390.pbf?key=REDACTED). This is expected for tiles that were being prefetched but are no longer needed for the map to render.
+10-04 17:12:00.733   572   654 I AppsFilter: interaction: PackageSetting{1e13be1 com.mapvina.sample/10210} -> PackageSetting{5a9ed98 com.mapvina.mapvinademotest/10208} BLOCKED
+10-04 17:12:00.734   572   654 I AppsFilter: interaction: PackageSetting{f9c25fa io.github.mapvina.android.testapp/10209} -> PackageSetting{5a9ed98 com.mapvina.mapvinademotest/10208} BLOCKED
+10-04 17:12:00.734   572   654 I AppsFilter: interaction: PackageSetting{26a87ab com.sangnguyensunny.MapVinaexpoapp/10207} -> PackageSetting{5a9ed98 com.mapvina.mapvinademotest/10208} BLOCKED
+10-04 17:12:00.734   572   654 I AppsFilter: interaction: PackageSetting{5f40e08 com.trackasia.live/10211} -> PackageSetting{5a9ed98 com.mapvina.mapvinademotest/10208} BLOCKED
+10-04 17:12:00.796  1310  1358 D SessionCommitReceiver: Removing PromiseIcon for package: com.mapvina.mapvinademotest, install reason: 0, alreadyAddedPromiseIcon: false
+10-04 17:12:00.823   981   981 D CarrierSvcBindHelper: onPackageAdded: com.mapvina.mapvinademotest
+10-04 17:12:00.824   572   799 I SdkSandboxManager: No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10208, mPackageName='com.mapvina.mapvinademotest, mAppProcessToken='null'}
+10-04 17:12:00.831   572   789 D ShortcutService: adding package: com.mapvina.mapvinademotest userId0
+10-04 17:12:00.831   572   789 D ShortcutService: handlePackageAdded: com.mapvina.mapvinademotest user=0
+10-04 17:12:00.831   572   789 D ShortcutService: rescanPackageIfNeeded 0@com.mapvina.mapvinademotest, forceRescan=true , isNewApp=true
+... final output ...
+10-04 17:12:13.404  5231  5231 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-04 17:12:13.425   160   160 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-04 17:12:13.425  5231  5232 I Gralloc4: mapper 4.x is not supported
+10-04 17:12:13.425   159   159 I servicemanager: Caller(pid=5231,uid=2000,sid=u:r:shell:s0) Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest. No alternative instances declared in VINTF.
+10-04 17:12:13.580   572   743 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-04 17:12:13.580   572   743 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-04 17:12:13.580   572   743 D InetDiagMessage: Destroyed live tcp sockets for uids={10140} in 1ms
+10-04 17:12:13.580   572   743 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-04 17:12:13.581   572   743 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-04 17:12:13.581   572   743 D InetDiagMessage: Destroyed live tcp sockets for uids={20140} in 0ms

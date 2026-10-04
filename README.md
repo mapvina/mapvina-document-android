@@ -1,5 +1,10 @@
 # 📍 MapVina Maps Android SDK V2- Hướng dẫn Tích hợp Chi tiết
 
+> **Verification 04/10/2026 — PARTIAL PASS.**
+> Core public `1.0.2`; GeoJSON/Turf/Gestures public `1.0.1`; annotation public `1.0.0`.
+> See [verified setup, evidence and limitations](docs/verification/2026-10-04/README.md) before following older examples.
+> No new SDK was published by this documentation update.
+
 ## 📋 Mục lục
 1. [Giới thiệu](#giới-thiệu)
 2. [Tính năng chính](#tính-năng-chính)
@@ -145,14 +150,16 @@ android {
 
 dependencies {
     // MapVina Core SDK
-    implementation('io.github.mapvina:android-sdk:1.0.0')
+    implementation('io.github.mapvina:android-sdk:1.0.2')
     
     // MapVina Data Models
-    implementation('io.github.mapvina:android-sdk-geojson:1.0.0')
-    implementation('io.github.mapvina:android-sdk-turf:1.0.0')
+    implementation('io.github.mapvina:android-sdk-geojson:1.0.1')
+    implementation('io.github.mapvina:android-sdk-turf:1.0.1')
     
     // MapVina Plugins
-    implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0')
+    implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0') {
+        exclude group: 'io.github.mapvina', module: 'android-sdk-opengl'
+    }
     
     // Location Services
     implementation 'com.google.android.gms:play-services-location:21.0.1'
