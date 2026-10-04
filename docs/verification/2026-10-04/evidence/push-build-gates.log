@@ -1,0 +1,16 @@
+android-demo-push-gate.log
+Raw SHA-256: f8ee22b13f08d452f779d1af488359b914445776ba8eecf3044881b0981096b5
+> Task :app:testDebugUnitTest NO-SOURCE
+BUILD SUCCESSFUL in 2s
+
+android-example-push-gate.log
+Raw SHA-256: ee371f2d90771c87a4368255da688355fddc7709506d92d8975a05de881b7bfa
+> Task :app:testDebugUnitTest UP-TO-DATE
+BUILD SUCCESSFUL in 9s
+
+ios-public-push-gate.log
+Raw SHA-256: 6b2817116440b8d91de5d53ba6930f599aa447ff74483316f8eab1364441e822
+2026-10-04 17:41:11.661 appintentsmetadataprocessor[22586:182157] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+2026-10-04 17:41:11.913 appintentsmetadataprocessor[22591:182185] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+2026-10-04 17:41:15.516 appintentsmetadataprocessor[22689:182722] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+** BUILD SUCCEEDED **

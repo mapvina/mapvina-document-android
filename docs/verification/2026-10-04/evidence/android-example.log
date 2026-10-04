@@ -1,0 +1,32 @@
+Raw log SHA-256: 34a8bb615aeb3fe1adac9f28836d52cb296510b0aaa1b52ca1a98f4192076847
+Excerpt only; full output retained outside Git in the local audit directory.
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :app
+w: file://$WORKSPACE/mapvina-document-android-github/example/app/build.gradle.kts:34:9: 'jvmTarget: String' is deprecated. Please migrate to the compilerOptions DSL. More details are here: https://kotl.in/u1r8ln
+WARNING: We recommend using a newer Android Gradle plugin to use compileSdk = 35
+
+... selected diagnostic lines ...
+w: file://$WORKSPACE/mapvina-document-android-github/example/app/build.gradle.kts:34:9: 'jvmTarget: String' is deprecated. Please migrate to the compilerOptions DSL. More details are here: https://kotl.in/u1r8ln
+BUILD SUCCESSFUL in 20s
+EXIT_CODE=0
+... final output ...
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:dexBuilderDebug
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:mergeProjectDexDebug
+> Task :app:compileDebugUnitTestKotlin
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processDebugUnitTestJavaRes
+> Task :app:testDebugUnitTest
+
+BUILD SUCCESSFUL in 20s
+44 actionable tasks: 16 executed, 28 up-to-date
+
+EXIT_CODE=0
