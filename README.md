@@ -655,6 +655,90 @@ class GeofencingExample {
 }
 ```
 
+### 5. Tùy biến Icon & Ornaments Core Bản đồ (Logo, La bàn, Điểm vị trí Puck, Marker, Attribution)
+
+MapVina Android SDK cung cấp các API trực quan cho phép can thiệp vào các thành phần ornament cốt lõi:
+
+#### a. Tùy biến Logo MapVina
+Có thể cấu hình trực tiếp qua layout XML hoặc thông qua đối tượng `UiSettings`:
+```kotlin
+val uiSettings = mapvinaMap.uiSettings
+
+// Bật/tắt hiển thị logo
+uiSettings.isLogoEnabled = true
+
+// Căn chỉnh vị trí (Gravity) và khoảng cách lề (Margins)
+uiSettings.logoGravity = Gravity.BOTTOM or Gravity.START
+uiSettings.setLogoMargins(16, 0, 0, 16) // left, top, right, bottom (pixels)
+```
+
+#### b. Tùy biến La bàn (Compass Icon)
+Tùy chỉnh biểu tượng la bàn và hành vi tự động ẩn khi bản đồ quay đúng hướng Bắc:
+```kotlin
+// Tùy biến qua UiSettings
+uiSettings.isCompassEnabled = true
+uiSettings.compassGravity = Gravity.TOP or Gravity.END
+uiSettings.setCompassMargins(0, 16, 16, 0)
+uiSettings.isCompassFadeFacingNorth = true // Mờ dần khi quay về hướng Bắc
+
+// Thay thế icon la bàn tùy biến bằng Drawable riêng
+val customCompassDrawable = ContextCompat.getDrawable(context, R.drawable.ic_custom_compass)
+uiSettings.setCompassImage(customCompassDrawable)
+```
+
+#### c. Tùy biến Điểm vị trí người dùng (User Location Puck & Bearing)
+Sử dụng `LocationComponentOptions` để thay đổi diện mạo của điểm định vị:
+```kotlin
+val locationComponentOptions = LocationComponentOptions.builder(context)
+    // Icon chấm vị trí trung tâm (mặc định mapvina_user_icon)
+    .foregroundDrawable(R.drawable.custom_location_puck)
+    // Viền bao quanh icon vị trí (mặc định mapvina_user_stroke_icon)
+    .backgroundDrawable(R.drawable.custom_puck_stroke)
+    // Mũi tên chỉ hướng xoay/bearing (mặc định mapvina_user_bearing_icon)
+    .bearingDrawable(R.drawable.custom_bearing_chevron)
+    // Icon chế độ dẫn đường GPS (mặc định mapvina_user_puck_icon)
+    .gpsDrawable(R.drawable.custom_gps_navigation_puck)
+    // Trạng thái mất tín hiệu GPS
+    .foregroundDrawableStale(R.drawable.custom_puck_stale)
+    // Tùy chỉnh màu sắc vòng tròn sai số (Accuracy Ring)
+    .accuracyColor(ContextCompat.getColor(context, R.color.mapvina_primary))
+    .accuracyAlpha(0.25f)
+    .build()
+
+val locationComponentActivationOptions = LocationComponentActivationOptions.builder(context, style)
+    .locationComponentOptions(locationComponentOptions)
+    .build()
+
+val locationComponent = mapvinaMap.locationComponent
+locationComponent.activateLocationComponent(locationComponentActivationOptions)
+locationComponent.isLocationComponentEnabled = true
+```
+
+#### d. Tùy biến Default Marker
+Thay thế hoặc khởi tạo marker tùy biến qua `IconFactory`:
+```kotlin
+val iconFactory = IconFactory.getInstance(context)
+val customMarkerIcon = iconFactory.fromResource(R.drawable.custom_map_pin)
+
+mapvinaMap.addMarker(
+    MarkerOptions()
+        .position(LatLng(10.7769, 106.7009))
+        .title("Bưu điện Trung tâm Sài Gòn")
+        .icon(customMarkerIcon)
+)
+```
+
+#### e. Dành cho nhà phát triển bảo trì Core (`mapvina-native`)
+Khi cần thay đổi tài nguyên mặc định ngay trong thư viện core `MapVinaAndroid`:
+- Thư mục tài nguyên: `platform/android/MapVinaAndroid/src/main/res/`
+- Các tệp PNG theo tỷ lệ DPI:
+  - Logo: `drawable-{m,h,xh,xxh,xxxh}dpi/mapvina_logo_icon.png` (Kích thước xxxhdpi: 432x124 px).
+  - La bàn: `drawable-{m,h,xh,xxh,xxxh}dpi/mapvina_compass_icon.png` (Kích thước xxxhdpi: 192x192 px).
+  - Marker mặc định: `drawable-{m,h,xh,xxh,xxxh}dpi/mapvina_marker_icon_default.png` (Kích thước xxxhdpi: 80x224 px).
+- Các tệp vector XML trong `drawable/`:
+  - `mapvina_user_icon.xml`, `mapvina_user_bearing_icon.xml`, `mapvina_user_puck_icon.xml`.
+  - `mapvina_info_icon_default.xml`, `mapvina_info_icon_selected.xml`.
+
 ---
 
 ## 🌐 API Services
