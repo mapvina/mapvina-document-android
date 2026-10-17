@@ -1,4 +1,8 @@
-# **TRACK ASIA TÍCH HỢP**
+# MapVina Android Demo
+
+> **Verification 04/10/2026:** public core `1.0.2`; streets/logo smoke tested.
+> [Build/run, images and limitations](../docs/verification/2026-10-04/README.md)
+> are authoritative; older feature snippets are reference-only, not full runtime acceptance.
 
 # Tích hợp MapVinaSample vào Android
 
@@ -34,10 +38,12 @@ Thêm dependencies cho MapVina SDK và các dịch vụ liên quan:
 
 ```gradle
 dependencies {
-    implementation('io.github.mapvina:android-sdk:1.0.0')
-    implementation('io.github.mapvina:android-sdk-geojson:1.0.0')
-    implementation('io.github.mapvina:android-sdk-turf:1.0.0')
-    implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0')
+    implementation('io.github.mapvina:android-sdk:1.0.2')
+    implementation('io.github.mapvina:android-sdk-geojson:1.0.1')
+    implementation('io.github.mapvina:android-sdk-turf:1.0.1')
+    implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0') {
+        exclude group: 'io.github.mapvina', module: 'android-sdk-opengl'
+    }
 }
 ```
 
@@ -45,7 +51,7 @@ dependencies {
 Thêm `MapView` vào file layout XML:
 
 ```xml
-<com.mapvina.android.maps.MapView
+<io.github.mapvina.android.maps.MapView
     android:id="@+id/mapView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -69,13 +75,13 @@ Thêm `MapView` vào file layout XML:
 ### Import thư viện cần thiết:
 
 ```kotlin
-import com.mapvina.android.maps.MapView
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.maps.CameraPosition
-import com.mapvina.android.maps.Style
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.MapVina
-import com.mapvina.android.navigation.ui.NavigationMapRoute
+import io.github.mapvina.android.maps.MapView
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.navigation.android.navigation.ui.v5.route.NavigationMapRoute
 ```
 
 ### Khai báo biến:

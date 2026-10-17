@@ -1,0 +1,967 @@
+{
+  "date": "2026-10-04",
+  "maven": [
+    {
+      "artifact": "android-plugin-annotation-v9",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-plugin-annotation-v9/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "android-plugin-building-v9",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-plugin-building-v9/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "android-plugin-localization-v9",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-plugin-localization-v9/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "android-plugin-markerview-v9",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-plugin-markerview-v9/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "android-plugin-offline-v9",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-plugin-offline-v9/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "android-plugin-scalebar-v9",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-plugin-scalebar-v9/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "android-sdk",
+      "version": "1.0.2",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk/maven-metadata.xml",
+      "pom": true,
+      "aar_sha256": "c5910d139d294d1a2e0b7017c89acc9cd394773c306e65794a87ecb23546b97b",
+      "checksum_sha1_matches": true,
+      "aar_signature_present": true,
+      "pom_signature_present": true,
+      "logo_sha256": "5a9edbd0d555f788475950eac2bd6b2fcfab396f242b734984c7fd96537dd9ac",
+      "pom_sha1_matches": true
+    },
+    {
+      "artifact": "android-sdk-debug",
+      "version": "1.0.2",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk-debug/maven-metadata.xml",
+      "pom": true,
+      "aar_sha256": "ec531981c87fdcd7af3fd1e748be7c2e272d202c8dc8802775687d4c10127233",
+      "checksum_sha1_matches": true,
+      "aar_signature_present": true,
+      "pom_signature_present": true,
+      "logo_sha256": "5a9edbd0d555f788475950eac2bd6b2fcfab396f242b734984c7fd96537dd9ac",
+      "pom_sha1_matches": true
+    },
+    {
+      "artifact": "android-sdk-geojson",
+      "version": "1.0.1",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk-geojson/maven-metadata.xml",
+      "pom": true,
+      "namespace_examples": [
+        "io/github/mapvina/geojson/LineString.class",
+        "io/github/mapvina/geojson/GeometryCollection.class",
+        "io/github/mapvina/geojson/Feature$GsonTypeAdapter.class"
+      ]
+    },
+    {
+      "artifact": "android-sdk-ktx-v7",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk-ktx-v7/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "android-sdk-opengl",
+      "version": "1.0.2",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk-opengl/maven-metadata.xml",
+      "pom": true,
+      "aar_sha256": "8b510762b9c60e8ca0e9663002e6e86a07d09b6b7ba9460181c37ebff18b5718",
+      "checksum_sha1_matches": true,
+      "aar_signature_present": true,
+      "pom_signature_present": true,
+      "logo_sha256": "5a9edbd0d555f788475950eac2bd6b2fcfab396f242b734984c7fd96537dd9ac",
+      "pom_sha1_matches": true
+    },
+    {
+      "artifact": "android-sdk-opengl-debug",
+      "version": "1.0.2",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk-opengl-debug/maven-metadata.xml",
+      "pom": true,
+      "aar_sha256": "d7c6b9710e0851991ccfc3976507a36e55b305f63bdf3fad79d3defa31ff0556",
+      "checksum_sha1_matches": true,
+      "aar_signature_present": true,
+      "pom_signature_present": true,
+      "logo_sha256": "5a9edbd0d555f788475950eac2bd6b2fcfab396f242b734984c7fd96537dd9ac",
+      "pom_sha1_matches": true
+    },
+    {
+      "artifact": "android-sdk-turf",
+      "version": "1.0.1",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk-turf/maven-metadata.xml",
+      "pom": true,
+      "namespace_examples": [
+        "io/github/mapvina/turf/TurfException.class",
+        "io/github/mapvina/turf/TurfConstants$TurfUnitCriteria.class",
+        "io/github/mapvina/turf/TurfJoins.class"
+      ]
+    },
+    {
+      "artifact": "android-sdk-vulkan",
+      "version": "1.0.2",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk-vulkan/maven-metadata.xml",
+      "pom": true,
+      "aar_sha256": "c5910d139d294d1a2e0b7017c89acc9cd394773c306e65794a87ecb23546b97b",
+      "checksum_sha1_matches": true,
+      "aar_signature_present": true,
+      "pom_signature_present": true,
+      "logo_sha256": "5a9edbd0d555f788475950eac2bd6b2fcfab396f242b734984c7fd96537dd9ac",
+      "pom_sha1_matches": true
+    },
+    {
+      "artifact": "android-sdk-vulkan-debug",
+      "version": "1.0.2",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/android-sdk-vulkan-debug/maven-metadata.xml",
+      "pom": true,
+      "aar_sha256": "ec531981c87fdcd7af3fd1e748be7c2e272d202c8dc8802775687d4c10127233",
+      "checksum_sha1_matches": true,
+      "aar_signature_present": true,
+      "pom_signature_present": true,
+      "logo_sha256": "5a9edbd0d555f788475950eac2bd6b2fcfab396f242b734984c7fd96537dd9ac",
+      "pom_sha1_matches": true
+    },
+    {
+      "artifact": "earcut4j",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/earcut4j/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "mapvina-android-gestures",
+      "version": "1.0.1",
+      "pom": true,
+      "namespace_examples": [
+        "io/github/mapvina/android/gestures/AndroidGesturesManager$GestureType.class",
+        "io/github/mapvina/android/gestures/AndroidGesturesManager.class",
+        "io/github/mapvina/android/gestures/BaseGesture.class"
+      ]
+    },
+    {
+      "artifact": "navigation/navigation-core",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/navigation/navigation-core/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "navigation/navigation-core-android",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/navigation/navigation-core-android/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "navigation/navigation-ui-android",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/navigation/navigation-ui-android/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-androidnativearm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-androidnativearm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-androidnativearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-androidnativearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-androidnativex64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-androidnativex64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-androidnativex86",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-androidnativex86/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-iosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-iosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-iossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-iossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-iosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-iosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-jvm",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-jvm/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-linuxarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-linuxarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-linuxx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-linuxx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-macosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-macosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-macosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-macosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-mingwx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-mingwx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-tvosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-tvosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-tvossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-tvossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-tvosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-tvosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-wasm-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-wasm-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-wasm-wasi",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-wasm-wasi/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-watchosarm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-watchosarm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-watchosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-watchosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-watchosdevicearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-watchosdevicearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-watchossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-watchossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/geojson-watchosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/geojson-watchosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-androidnativearm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-androidnativearm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-androidnativearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-androidnativearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-androidnativex64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-androidnativex64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-androidnativex86",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-androidnativex86/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-iosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-iosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-iossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-iossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-iosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-iosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-jvm",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-jvm/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-linuxarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-linuxarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-linuxx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-linuxx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-macosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-macosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-macosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-macosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-mingwx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-mingwx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-tvosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-tvosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-tvossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-tvossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-tvosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-tvosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-wasm-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-wasm-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-wasm-wasi",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-wasm-wasi/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-watchosarm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-watchosarm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-watchosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-watchosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-watchosdevicearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-watchosdevicearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-watchossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-watchossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/gpx-watchosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/gpx-watchosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-androidnativearm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-androidnativearm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-androidnativearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-androidnativearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-androidnativex64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-androidnativex64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-androidnativex86",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-androidnativex86/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-iosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-iosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-iossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-iossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-iosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-iosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-jvm",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-jvm/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-linuxarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-linuxarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-linuxx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-linuxx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-macosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-macosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-macosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-macosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-mingwx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-mingwx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-tvosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-tvosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-tvossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-tvossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-tvosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-tvosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-wasm-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-wasm-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-wasm-wasi",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-wasm-wasi/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-watchosarm32",
+      "version": "1.0.0",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-watchosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-watchosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-watchosdevicearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-watchosdevicearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-watchossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-watchossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/polyline-encoding-watchosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/polyline-encoding-watchosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-androidnativearm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-androidnativearm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-androidnativearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-androidnativearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-androidnativex64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-androidnativex64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-androidnativex86",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-androidnativex86/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-iosarm64",
+      "version": "1.0.0",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-iossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-iossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-iosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-iosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-jvm",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-jvm/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-linuxarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-linuxarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-linuxx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-linuxx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-macosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-macosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-macosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-macosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-mingwx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-mingwx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-tvosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-tvosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-tvossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-tvossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-tvosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-tvosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-wasm-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-wasm-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-wasm-wasi",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-wasm-wasi/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-watchosarm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-watchosarm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-watchosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-watchosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-watchosdevicearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-watchosdevicearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-watchossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-watchossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/turf-watchosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/turf-watchosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-androidnativearm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-androidnativearm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-androidnativearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-androidnativearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-androidnativex64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-androidnativex64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-androidnativex86",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-androidnativex86/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-iosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-iosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-iossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-iossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-iosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-iosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-jvm",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-jvm/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-linuxarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-linuxarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-linuxx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-linuxx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-macosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-macosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-macosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-macosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-mingwx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-mingwx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-tvosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-tvosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-tvossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-tvossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-tvosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-tvosx64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-wasm-js",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-wasm-js/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-wasm-wasi",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-wasm-wasi/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-watchosarm32",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-watchosarm32/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-watchosarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-watchosarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-watchosdevicearm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-watchosdevicearm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-watchossimulatorarm64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-watchossimulatorarm64/maven-metadata.xml",
+      "pom": true
+    },
+    {
+      "artifact": "spatialk/units-watchosx64",
+      "version": "1.0.0",
+      "metadata_url": "https://repo.maven.apache.org/maven2/io/github/mapvina/spatialk/units-watchosx64/maven-metadata.xml",
+      "pom": true
+    }
+  ],
+  "pub": {
+    "mapvina_gl": {
+      "version": "1.0.1",
+      "archive_url": "https://pub.dev/api/archives/mapvina_gl-1.0.1.tar.gz"
+    },
+    "mapvina_gl_web": {
+      "version": "1.0.1",
+      "archive_url": "https://pub.dev/api/archives/mapvina_gl_web-1.0.1.tar.gz"
+    },
+    "mapvina_gl_platform_interface": {
+      "version": "1.0.1",
+      "archive_url": "https://pub.dev/api/archives/mapvina_gl_platform_interface-1.0.1.tar.gz"
+    }
+  },
+  "npm": {
+    "name": "@mapvina-com/mapvina-react-native",
+    "version": "1.0.2",
+    "dist": {
+      "shasum": "059a8362f627a8e220d607dee3f0c8ca4e2b1eb6",
+      "tarball": "https://registry.npmjs.org/@mapvina-com/mapvina-react-native/-/mapvina-react-native-1.0.2.tgz",
+      "fileCount": 970,
+      "integrity": "sha512-bAO1ZnDSQ03Ok0wIzYTQbC7ZDw0uYtqpSoE1Wt/VblTWBKU7oAv6f/YtOLqDZo8Fw9RWUxw+wHQwOTLe3CS/sg==",
+      "signatures": [
+        {
+          "sig": "MEUCIDcY2ViIc9ExVoaRheaAs4NS4SF1u9FJJpsFpx31VvmTAiEAkQAyZRbTpq/73K8JoO01lZDprrh+vWqj/dla9q39Cnc=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEQCIGS8o02CB8BEQnLqjBcouOYdg9Zzu+BC+0eICwrf1I1XAiBPJfFNd2WbMSZuLDH3sCFCfNulA45JMI3n0O1deI9U9Q=="
+        }
+      ],
+      "unpackedSize": 2116656
+    }
+  },
+  "cocoapods_http": 404,
+  "annotation_namespace": {
+    "artifact": "android-plugin-annotation-v9:1.0.0",
+    "examples": [
+      "com/mapvina/android/plugins/annotation/Symbol.class",
+      "com/mapvina/android/plugins/annotation/SymbolManager.class"
+    ],
+    "io_github_plugin_class_count": 0
+  }
+}

@@ -6,11 +6,12 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.mapvina.android.MapVina
-import com.mapvina.android.camera.CameraUpdateFactory
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.maps.Style
-import com.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.android.WellKnownTileServer
+import io.github.mapvina.android.camera.CameraUpdateFactory
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.maps.MapVinaMap
 import com.mapvina.mapvinademotest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MapVina.getInstance(this)
+        MapVina.getInstance(this, "public", WellKnownTileServer.MapVina)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initMap()

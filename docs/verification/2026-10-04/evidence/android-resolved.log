@@ -1,0 +1,30 @@
+Raw log SHA-256: 2d0c12e90dcdd2384628359e7d737c6a30f6ebc4e78bb098267e3e0230a66f72
+Excerpt only; full output retained outside Git in the local audit directory.
+
+
+> Task :app:dependencyInsight
+io.github.mapvina:android-plugin-annotation-v9:1.0.0
+  Variant releaseVariantReleaseRuntimePublication:
+    | Attribute Name                                  | Provided     | Requested    |
+    |-------------------------------------------------|--------------|--------------|
+... selected diagnostic lines ...
+BUILD SUCCESSFUL in 3s
+... final output ...
+io.github.mapvina:mapvina-android-gestures:1.0.1
+\--- io.github.mapvina:android-sdk:1.0.2
+     +--- debugRuntimeClasspath
+     \--- io.github.mapvina:android-plugin-annotation-v9:1.0.0 (requested io.github.mapvina:android-sdk:1.0.0)
+          \--- debugRuntimeClasspath
+
+(*) - Indicates repeated occurrences of a transitive dependency subtree. Gradle expands transitive dependency subtrees only once per project; repeat occurrences only display the root of the subtree, followed by this annotation.
+
+A web-based, searchable dependency report is available by adding the --scan option.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.9/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 3s
+1 actionable task: 1 executed
