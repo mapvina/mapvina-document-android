@@ -51,7 +51,7 @@ dependencies {
 Thêm `MapView` vào file layout XML:
 
 ```xml
-<com.mapvina.android.maps.MapView
+<io.github.mapvina.android.maps.MapView
     android:id="@+id/mapView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -75,13 +75,13 @@ Thêm `MapView` vào file layout XML:
 ### Import thư viện cần thiết:
 
 ```kotlin
-import com.mapvina.android.maps.MapView
-import com.mapvina.android.maps.MapVinaMap
-import com.mapvina.android.maps.CameraPosition
-import com.mapvina.android.maps.Style
-import com.mapvina.android.geometry.LatLng
-import com.mapvina.android.MapVina
-import com.mapvina.android.navigation.ui.NavigationMapRoute
+import io.github.mapvina.android.maps.MapView
+import io.github.mapvina.android.maps.MapVinaMap
+import io.github.mapvina.android.camera.CameraPosition
+import io.github.mapvina.android.maps.Style
+import io.github.mapvina.android.geometry.LatLng
+import io.github.mapvina.android.MapVina
+import io.github.mapvina.navigation.android.navigation.ui.v5.route.NavigationMapRoute
 ```
 
 ### Khai báo biến:

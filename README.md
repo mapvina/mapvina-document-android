@@ -210,7 +210,8 @@ org.gradle.caching=true
         
         <!-- MapVina Navigation Service -->
         <service 
-            android:name="com.mapvina.navigation.android.navigation.v5.navigation.MapboxNavigationService"
+            android:name="io.github.mapvina.navigation.android.navigation.ui.v5.notification.service.NavigationNotificationService"
+            android:foregroundServiceType="location"
             android:exported="false" />
             
     </application>
@@ -242,7 +243,7 @@ class MyApplication : Application() {
     android:layout_height="match_parent">
     
     <!-- MapView với đầy đủ cấu hình -->
-    <com.mapvina.android.maps.MapView
+    <io.github.mapvina.android.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -1134,19 +1135,13 @@ fun addMultipleMarkers(points: List<LatLng>) {
 
 ### 2. **ProGuard Rules**
 ```proguard
-# MapVina
--keep class com.mapvina.** { *; }
--keep interface com.mapvina.** { *; }
--keep enum com.mapvina.** { *; }
+# MapVina SDK Core & Plugins
+-keep class io.github.mapvina.** { *; }
+-keep interface io.github.mapvina.** { *; }
+-keep enum io.github.mapvina.** { *; }
 
-# GeoJSON
--keep class com.mapvina.geojson.** { *; }
-
-# Navigation
--keep class com.mapvina.navigation.** { *; }
-
-# Turf
--keep class com.mapvina.turf.** { *; }
+# App Package
+-keep class com.mapvina.sample.** { *; }
 
 # OkHttp
 -dontwarn okhttp3.**

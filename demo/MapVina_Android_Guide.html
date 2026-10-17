@@ -60,7 +60,7 @@ dependencies {
   </ul>
 
   <h2 id="layout">4) Thêm MapView vào layout XML</h2>
-  <pre><code>&lt;com.mapvina.android.maps.MapView
+  <pre><code>&lt;io.github.mapvina.android.maps.MapView
     android:id="@+id/mapView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -71,16 +71,16 @@ dependencies {
 
   <h2 id="init">5) Khởi tạo map trong Fragment/Activity</h2>
   <pre><code>// Kotlin (tối giản)
-private lateinit var mapvinaMap: com.mapvina.android.maps.MapVinaMap
+private lateinit var mapvinaMap: io.github.mapvina.android.maps.MapVinaMap
 private var styleUrl = "https://maps.mapvina.com/styles/v2/streets.json?key=public"
 
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-  com.mapvina.android.MapVina.getInstance(requireActivity())
-  val mapView = view.findViewById&lt;com.mapvina.android.maps.MapView&gt;(R.id.mapView)
+  io.github.mapvina.android.MapVina.getInstance(requireActivity())
+  val mapView = view.findViewById&lt;io.github.mapvina.android.maps.MapView&gt;(R.id.mapView)
   mapView.onCreate(savedInstanceState)
   mapView.getMapAsync { map -&gt;
     mapvinaMap = map
-    map.setStyle(com.mapvina.android.maps.Style.Builder().fromUri(styleUrl)) { style -&gt;
+    map.setStyle(io.github.mapvina.android.maps.Style.Builder().fromUri(styleUrl)) { style -&gt;
       // TODO: thêm marker, route...
     }
   }
@@ -103,14 +103,14 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
   <h2 id="features">8) Marker, Camera, Style</h2>
   <pre><code>// Thêm marker (minh hoạ)
-val iconFactory = com.mapvina.android.annotations.IconFactory.getInstance(context)
-val marker = com.mapvina.android.annotations.MarkerOptions()
-  .position(com.mapvina.android.geometry.LatLng(21.028, 105.854))
+val iconFactory = io.github.mapvina.android.annotations.IconFactory.getInstance(context)
+val marker = io.github.mapvina.android.annotations.MarkerOptions()
+  .position(io.github.mapvina.android.geometry.LatLng(21.028, 105.854))
 mapvinaMap.addMarker(marker)
 
 // Camera
-val update = com.mapvina.android.camera.CameraUpdateFactory.newLatLngZoom(
-  com.mapvina.android.geometry.LatLng(21.028, 105.854), 14.0)
+val update = io.github.mapvina.android.camera.CameraUpdateFactory.newLatLngZoom(
+  io.github.mapvina.android.geometry.LatLng(21.028, 105.854), 14.0)
 mapvinaMap.animateCamera(update, 1000)
 
 // Đổi style runtime
