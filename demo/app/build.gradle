@@ -102,8 +102,11 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
     
     // MapVina SDK components
-    implementation 'io.github.mapvina:android-sdk:1.0.1'
-    implementation 'io.github.mapvina:android-plugin-annotation-v9:1.0.0'
+    implementation 'io.github.mapvina:android-sdk:1.0.2'
+    implementation 'io.github.mapvina:android-sdk-geojson:1.0.1'
+    implementation('io.github.mapvina:android-plugin-annotation-v9:1.0.0') {
+        exclude group: 'io.github.mapvina', module: 'android-sdk-opengl'
+    }
 
 
     testImplementation 'junit:junit:4.+'

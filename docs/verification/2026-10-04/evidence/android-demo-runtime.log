@@ -1,0 +1,49 @@
+Raw log SHA-256: 8bd1aa8b952045f620a4ec4481ed07a692ec689bfbf6a36fa8cc394fb4dbbce3
+Excerpt only; full output retained outside Git in the local audit directory.
+
+--------- beginning of main
+10-04 17:08:07.661  4571  4628 I MESA    : exportSyncFdForQSRILocked: got fd: 196
+10-04 17:08:07.675  4571  4628 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e085850 hos timage handle 0x70005000004b0
+10-04 17:08:07.675  4571  4628 I MESA    : exportSyncFdForQSRILocked: got fd: 171
+10-04 17:08:07.680  4571  4628 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e0e75d0 hos timage handle 0x70005000003f4
+10-04 17:08:07.680  4571  4628 I MESA    : exportSyncFdForQSRILocked: got fd: 181
+... selected diagnostic lines ...
+10-04 17:08:15.114  4571  4748 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.148  4571  4844 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.150  4571  4749 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.152  4571  4845 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.157  4571  4853 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.158  4571  4849 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.163  4571  4829 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.168  4571  4828 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.177  4571  4747 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.177  4571  4861 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.186  4571  4860 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.186  4571  4750 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.186  4571  4862 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.187  4571  4826 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.252  4571  4748 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.360  4571  4826 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.368  4571  4862 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.370  4571  4750 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.483  4571  4748 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+10-04 17:08:15.654  4571  4748 D Mbgl-HttpRequest: [HTTP] Request with response = 404: No additional information
+... final output ...
+10-04 17:08:41.209  4571  4888 I MESA    : exportSyncFdForQSRILocked: got fd: 197
+10-04 17:08:41.221  4571  4888 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e1697d0 hos timage handle 0x70006000003fc
+10-04 17:08:41.221  4571  4888 I MESA    : exportSyncFdForQSRILocked: got fd: 179
+10-04 17:08:41.237  4571  4888 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e167050 hos timage handle 0x700050000019f
+10-04 17:08:41.237  4571  4888 I MESA    : exportSyncFdForQSRILocked: got fd: 191
+10-04 17:08:41.250  4571  4888 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e169110 hos timage handle 0x7000400000185
+10-04 17:08:41.250  4571  4888 I MESA    : exportSyncFdForQSRILocked: got fd: 185
+10-04 17:08:41.265   830   870 V WindowManagerShell: Transition requested (#26): android.os.BinderProxy@3aec736 TransitionRequestInfo { type = CHANGE, triggerTask = null, pipTask = null, remoteTransition = null, displayChange = DisplayChange { displayId = 0, startAbsBounds = null, endAbsBounds = null, startRotation = 1, endRotation = 0, physicalDisplayChanged = false }, flags = 0, debugId = 26 }
+10-04 17:08:41.271   409   409 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-04 17:08:41.276   409   532 D DisplayModeController: setDesiredMode 4619827259835644672 {mode={fps=60.00 Hz, modePtr={id=0, vsyncRate=60.00 Hz, peakRefreshRate=60.00 Hz}}, emitEvent=true, force=false}
+10-04 17:08:41.280  4571  4888 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e12cbd0 hos timage handle 0x7000500000420
+10-04 17:08:41.280  4571  4888 I MESA    : exportSyncFdForQSRILocked: got fd: 197
+10-04 17:08:41.288   572   648 D BrightnessThermalClamper: Thermal status observer already started
+10-04 17:08:41.290   572   622 I ActivityTaskManager: Config changes=20000480 {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h923dp 420dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2424) mAppBounds=Rect(0, 0 - 1080, 2424) mMaxBounds=Rect(0, 0 - 1080, 2424) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.116 fontWeightAdjustment=0}
+10-04 17:08:41.294  4571  4888 I MESA    : exportSyncFdForQSRILocked: call for image 0xb40000797e15ea50 hos timage handle 0x70004000003d8
+10-04 17:08:41.297  4571  4888 I MESA    : exportSyncFdForQSRILocked: got fd: 205
+10-04 17:08:41.304   572   622 V ActivityTaskManager: Sending to IME proc com.google.android.inputmethod.latin new config {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h845dp 420dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2424) mAppBounds=Rect(0, 142 - 1080, 2361) mMaxBounds=Rect(0, 0 - 1080, 2424) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.158 fontWeightAdjustment=0}
+10-04 17:08:41.311   572   622 I WindowManager: Override config changes=20000480 {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h923dp 420dpi nrml long port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1080, 2424) mAppBounds=Rect(0, 0 - 1080, 2424) mMaxBounds=Rect(0, 0 - 1080, 2424) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.116 fontWeightAdjustment=0} for displayId=0
